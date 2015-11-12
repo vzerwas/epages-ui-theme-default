@@ -1,0 +1,30 @@
+{#navigation}
+  <nav class="main-navigation" role="navigation">
+    <span class="show-menu">
+      <label for="trigger" title="Menu">
+        <span class="fa fa-bars"></span>
+      </label>
+    </span>
+    <input type="checkbox" id="trigger" class="trigger visually-hidden"/>
+    <ul>
+      {#pages}
+        {>"nested-page-list"/}
+      {/pages}
+    </ul>
+  </nav>
+
+  {^isHomepage}{?breadcrumb}
+    <ul class="breadcrumb">
+      <li><a href="{baseUrl}">Home</a></li>
+      {#breadcrumb}
+        <li>
+          {?isCurrentPage}
+            {title}
+          {:else}
+            <a href="{.href}">{title}</a>
+          {/isCurrentPage}
+        </li>
+      {/breadcrumb}
+    </ul>
+  {/breadcrumb}{/isHomepage}
+{/navigation}

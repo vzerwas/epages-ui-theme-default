@@ -1,0 +1,357 @@
+@minicart-container-box-shadow-color: lighten(@alto-theme-brand-secondary, 60%);
+@minicart-container-border-color: lighten(@alto-theme-brand-secondary, 60%);
+@minicart-container-triangle-color: @alto-theme-brand-white;
+@minicart-badge-background-color: rgb(121, 178, 11);
+@minicart-badge-text-color: @alto-theme-brand-white;
+
+//
+// Arrow box
+.arrow-top-corner() {
+  &::after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: " ";
+    border: solid transparent;
+    border-width: 10px;
+    border-bottom-color: white;
+    bottom: 100%;
+    -webkit-filter: drop-shadow(0px -2px 1px rgba(0,0,0,0.1));
+    filter: drop-shadow(0px -2px 1px rgba(0,0,0,0.1));
+  }
+}
+
+// TODO documentation
+
+.container-fluid {
+  position: relative; // Paint trigger
+  margin: 0 auto;
+  padding: 0 (@alto-theme-padding * 2);
+  max-width: @alto-theme-max-width;
+  min-width: @alto-theme-min-width;
+}
+
+.hero-image {
+  margin-bottom: 2em;
+}
+
+//
+// Header styling with logo, search field and mini cart
+.site-header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin: 40px 0;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: @screen-sm-min) {
+    flex-flow: row wrap;
+  }
+
+  &-logo {
+    order: 1;
+    flex-grow: 1;
+
+    @media (max-width: 567px) {
+      flex-basis: 50%;
+    }
+  }
+
+  &-search {
+    order: 2;
+    flex-grow: 1;
+
+    @media (max-width: 567px) {
+      order: 3;
+      margin-top: @alto-theme-margin * 2;
+    }
+  }
+
+  &-minicart {
+    order: 3;
+    flex-grow: 1;
+    text-align: right;
+
+    @media (max-width: 567px) {
+      order: 2;
+      flex-basis: 50%;
+      text-align: right;
+    }
+
+    // Todo: use this after delete product feature is merged into develop
+    /*&-icon {
+      .fa;
+      .fa-2x;
+      &::before {content: @fa-var-shopping-cart;}
+    }*/
+
+    &-checkout {
+      display: inline-block;
+
+      &:hover + .minicart-container {
+        display: block;
+      }
+
+      &:hover + .minicart-container:empty {
+        display: none;
+      }
+    }
+
+    &-badge {
+      background-color: @minicart-badge-background-color;
+      border-radius: 20px;
+      color: @minicart-badge-text-color;
+      display: inline-block;
+      font-size: 12px;
+      text-align: center;
+      vertical-align: text-bottom;
+      white-space: nowrap;
+      margin-left: 10px;
+      padding: 5px 10px;
+      line-height: 1.4;
+
+      &:empty:after{
+        content:"0";
+      }
+    }
+  }
+}
+
+//
+// Mini cart box which is visible on hover
+.minicart-container {
+  display: none;
+  padding: @alto-theme-padding * 2;
+  margin: @alto-theme-margin 0;
+  position: absolute;
+  float: right;
+  z-index: 1;
+  width: 300px;
+  border-radius: 3px;
+  background-color: @alto-theme-brand-white;
+  box-shadow: 0 0 6px @minicart-container-box-shadow-color;
+  right: 0;
+  top: 50px;
+
+  .arrow-top-corner();
+    &::after {
+      left: 86%;
+    }
+}
+
+//
+// Mini cart product items in mini cart box
+.minicart-list {
+  .simple-list;
+
+  &-item {
+    display: table;
+    width: 100%;
+    padding: @alto-theme-padding 0;
+    border-bottom: 1px solid @minicart-container-border-color;
+    text-align: left;
+
+    &-image {
+      display: table-cell;
+    }
+
+    &-product {
+      display: table-cell;
+      width: 86%;
+      padding-left: @alto-theme-padding / 2;
+      vertical-align: top;
+
+      &-name {
+        margin: 0;
+      }
+
+      &-quantity {
+        display: block;
+        font-size: 13px;
+        font-weight: 300;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Main Navigation styling
+.main-navigation {
+  position: relative;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: @alto-theme-brand-primary;
+
+    @media (max-width: @screen-sm-max) {
+      display: none;
+    }
+
+    li {
+      display: block;
+      position: relative;
+      float: left;
+      background-color: @alto-theme-brand-primary;
+
+      a {
+        display: block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        white-space: nowrap;
+        font-weight: 300;
+        color: @alto-theme-brand-white;
+
+        @media (max-width: @screen-sm-max) {
+          display: inline-block;
+          padding: 1em 1.5em;
+          width: 100%;
+        }
+
+        &:hover {
+          background-color: darken(@alto-theme-brand-primary, 5%);
+        }
+      }
+
+      // This hides the dropdowns
+      ul {
+        display: none;
+      }
+
+      // This displays the dropdown
+      &:hover > ul {
+        display: block;
+        position: absolute;
+        z-index: @alto-theme-navi-zindex;
+
+        @media (max-width: @screen-sm-max) {
+          display: none;
+        }
+      }
+
+      &:hover li {
+        float: none;
+
+        a {
+          background-color: lighten(@alto-theme-brand-secondary, 30%);
+
+          &:hover {
+            background-color: lighten(@alto-theme-brand-secondary, 25%);
+          }
+        }
+      }
+    }
+  }
+
+  // Displays second level dropdowns to the right of the first level dropdown
+  ul ul ul {
+    left: 100%;
+    top: 0;
+  }
+
+  ul:before,
+  ul:after {
+    content: " ";
+    display: table;
+  }
+
+  // Simple clearfix
+  ul:after {
+    clear: both;
+  }
+
+  // Shows active navigation item
+  &-active {
+    background-color: darken(@alto-theme-brand-primary, 5%);
+  }
+}
+
+// Displays 'Hamburger' icon for mobile menu
+.show-menu {
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
+  top: -6em;
+
+  @media (min-width: @screen-sm-max) {
+    display: none;
+  }
+
+  @media (max-width: 567px) {
+    top: -10em;
+  }
+
+  label {
+    display: block;
+    margin-top: -.5em;
+    color: @alto-theme-brand-primary;
+
+    &:hover {
+      cursor: pointer;
+      color: darken(@alto-theme-brand-primary, 10%);
+    }
+  }
+}
+
+// Displays navigation for mobile view
+.trigger {
+  &:checked {
+
+    + ul {
+      display: block;
+      position: absolute;
+      z-index: @alto-theme-navi-zindex;
+      padding: 1em;
+      width: 100%;
+      overflow: auto;
+
+      @media (min-width: @screen-tablet){
+        padding: 0;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+
+      @media (max-width: @screen-sm-max) {
+        padding: 0;
+      }
+
+      li {
+        display: block;
+        width: 100%;
+
+        a {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+// Hides checkbox element
+.visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+// Overwrites the bootstrap styling Todo: Create own styling
+.breadcrumb {
+  background-color: transparent;
+  margin-top: 20px;
+  padding-left: 0;
+  font-size: 13px;
+  font-weight: 300;
+  color: lighten(@alto-theme-brand-text, 60%);
+}

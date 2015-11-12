@@ -1,0 +1,12 @@
+{?products}
+<ul class="search-form-results">
+  {#products}
+  <li class="search-form-results-item">
+    <a href="{href}">
+      <img src="{image.url}" />
+      <span class="search-form-results-item-name">{title}</span>
+    </a>
+  </li>
+  {/products}
+</ul>
+{/products}

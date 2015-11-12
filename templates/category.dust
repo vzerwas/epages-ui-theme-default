@@ -1,0 +1,103 @@
+{>"layout"/}
+
+{<content}
+  <h1>{category.title}</h1>
+
+  <div class="product-list-display-top">
+    <div class="product-list-sorting">
+      <span>Sort by:</span>
+      <form class="product-list-sorting-items" method="get">
+        <input type="hidden" name="page" value="{products.pages.active}"/>
+        <select name="sort" size="1" onchange="this.form.submit()" {?isEditor}disabled="disabled"{/isEditor}>
+          {#products.sorts}
+            <option value="{value}" {?active}selected="selected" {/active}>{label}</option>
+          {/products.sorts}
+        </select>
+      </form>
+    </div>
+    <div class="product-list-pagination">
+      {#products.pages}
+        {?previous.enabled}<a href="{previous.query}"><span class="fa fa-angle-left"></span></a>{/previous.enabled}
+        {#list}
+          <a href="{query}" {?active}class="product-list-pagination-current"{/active}>{number}</a>
+        {/list}
+        {?next.enabled}<a href="{next.query}"><span class="fa fa-angle-right"></span></a>{/next.enabled}
+      {/products.pages}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="hero-image">
+        {@plugin type="epages.image" id="category-hero-image"/}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="category-product-grid">
+      {?products}
+        <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+        {#products}
+          <li>
+            <a href="{href}">
+              <div class="center-image-container">
+                <img class="product-image" src="{image.url}" alt="{title}" />
+              </div>
+              <h2 class="product-title">{title}</h2>
+              <h3 class="product-price">{price}</h3>
+              <div class="product-availability">
+                <span class="product-availability-icon {stockLevelClass}-stock-icon"></span>
+                <p class="product-availability-text">{availabilityText}</p>
+              </div>
+            </a>
+          </li>
+        {/products}
+        </ul>
+      {:else}
+        <h3 class="text-center">
+          <span class="fa fa-ban fa-5x"></span>
+          <br/>No Products available
+        </h3>
+      {/products}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      {?category.subCategories}
+      <h4>Further categories</h4>
+      <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+        {#category.subCategories}
+        <li>
+          <a href="{href}">
+            <h3>{name}</h3>
+          </a>
+        </li>
+        {/category.subCategories}
+      </ul>
+      {/category.subCategories}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      {@plugin type="epages.text" id="category-description"/}
+    </div>
+  </div>
+
+  <div class="product-list-display-bottom">
+    <div class="product-list-pagination">
+      {#products.pages}
+        {?previous.enabled}<a href="{previous.query}"><span class="fa fa-angle-left"></span></a>{/previous.enabled}
+        {#list}
+          <a href="{query}" {?active}class="product-list-pagination-current"{/active}>{number}</a>
+        {/list}
+        {?next.enabled}<a href="{next.query}"><span class="fa fa-angle-right"></span></a>{/next.enabled}
+      {/products.pages}
+    </div>
+  </div>
+
+{/content}

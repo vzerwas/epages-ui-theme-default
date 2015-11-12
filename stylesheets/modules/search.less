@@ -1,0 +1,104 @@
+//
+// Search
+@search-result-hint-background-color: lighten(@alto-theme-brand-secondary, 70%);
+
+//
+// Suggested search
+@search-suggested-results-background-hover: lighten(@alto-theme-brand-secondary, 60%);
+
+.search-no-result {
+  margin: (@alto-theme-margin * 2) 0;
+  display: inline-block;
+  width: 100%;
+
+  &-form {
+    width: 66.666666%;
+    text-align: center;
+    margin: (@alto-theme-margin * 2) auto;
+
+    @media (max-width: @screen-xs-min) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &-headline {
+      margin-bottom: @alto-theme-margin;
+      font-size: 1.5em;
+    }
+  }
+
+  &-hint {
+    padding: 0 (@alto-theme-padding * 2) @alto-theme-padding (@alto-theme-padding * 2);
+    margin: @alto-theme-margin 0;
+    display: inline-block;
+    width: 100%;
+    background-color: @search-result-hint-background-color;
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+
+.search-form-suggestions {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  z-index: 20;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 0 6px rgb(215, 211, 211);
+    .arrow-top-corner();
+      &::after {
+        left: 5%;
+      }
+
+  .search-form-results {
+    text-align: left;
+    .simple-list;
+
+    &-item {
+      padding: 6px 12px;
+      width: 100%;
+      white-space: nowrap;
+      display: flex;
+
+      &:hover, &.active {
+        background-color: @search-suggested-results-background-hover;
+        cursor: pointer;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 0;   // necessary for text-overflow: ellipsis;
+        width: 100%;
+      }
+
+      img {
+        margin-left: 0;
+        margin-right: (@alto-theme-margin / 2);
+        width: 32px;
+        height: auto;
+      }
+
+      span {
+        width: 100%;
+      }
+
+      &-name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 2em;
+
+        @media (max-width: @screen-sm-min) {
+          line-height: 2.5em;
+        }
+      }
+    }
+  }
+}

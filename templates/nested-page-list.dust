@@ -1,0 +1,10 @@
+<li>
+  <a {?.isInBreadcrumb}class="main-navigation-active" {/.isInBreadcrumb}href="{.href}">{title}</a>
+  {?.children}
+    <ul>
+      {#.children}
+        {>"nested-page-list"/}
+      {/.children}
+    </ul>
+  {/.children}
+</li>

@@ -1,0 +1,239 @@
+//
+// Shopping cart colors
+@cart-table-head-background-color: lighten(@alto-theme-brand-secondary, 60%);
+@cart-background-color: @cart-table-head-background-color;
+@cart-table-border-color: lighten(@alto-theme-brand-secondary, 60%);
+@cart-table-image-border-color: lighten(@alto-theme-brand-secondary, 65%);
+@cart-table-separator-border-color: lighten(@alto-theme-brand-secondary, 65%);
+
+//
+// Shopping cart empty page
+.cart-empty-note {
+  width: 100%;
+  padding: @alto-theme-padding * 3;
+  margin-top: 80px;
+  background-color: @cart-background-color;
+  text-align: center;
+
+  &-text {
+    padding: @alto-theme-padding;
+  }
+}
+//
+// Shopping cart table design
+.cart-table {
+  width: 100%;
+  margin: 35px 0;
+  font-size: 12px;
+  text-align: left;
+
+  th {
+    padding: @alto-theme-padding;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+
+  tr {
+    border-bottom: 1px solid @cart-table-border-color;
+    @media (max-width: @screen-sm-min) {
+      display: inline-block;
+      padding: (@alto-theme-padding * 2) 0;
+      width: 100%;
+    }
+  }
+
+  td {
+    padding: 20px @alto-theme-padding;
+    font-weight: 300;
+  }
+
+  //
+  // Shopping cart table item
+
+  &-item-image {
+    padding: @alto-theme-padding;
+    border: 1px solid @cart-table-image-border-color;
+
+    @media (max-width: @screen-xs-min) {
+      padding: @alto-theme-padding;
+    }
+  }
+
+  &-item-product {
+    @media (max-width: @screen-sm-min) {
+      float: left;
+      width: auto;
+    }
+  }
+
+  &-item-description {
+    @media (max-width: @screen-sm-min) {
+      float: left;
+      width: 68%;
+    }
+
+    &-headline {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 400;
+      text-align: left;
+    }
+  }
+
+  &-item-price {
+    @media (max-width: @screen-sm-min) {
+      float: left;
+      width: 33.3333%;
+      clear: both;
+      text-align: left;
+      border-top: 1px dashed @cart-table-separator-border-color;
+    }
+  }
+
+  &-item-quantity {
+    @media (max-width: @screen-sm-min) {
+      float: left;
+      width: 33.3333%;
+      border-top: 1px dashed @cart-table-separator-border-color;
+      text-align: center;
+    }
+
+    &-input {
+      .alto-theme-input-field-styling;
+      font-size: inherit;
+      font-weight: 400;
+      max-width: 70px;
+      @media (max-width: @screen-sm-min) {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &-item-total {
+    text-align: right;
+    @media (max-width: @screen-sm-min) {
+      float: left;
+      width: 33.3333%;
+      border-top: 1px dashed @cart-table-separator-border-color;
+      text-align: right;
+    }
+  }
+
+  &-item-delete {
+    @media (max-width: @screen-sm-min) {
+      display: none;
+      float: left;
+      width: 100%;
+      text-align: center;
+    }
+
+    &-link {
+      font-weight: 400;
+    }
+
+    &-icon {
+      .fa;
+      &::before {content: @fa-var-trash-o;}
+      margin-right: 5px;
+      font-size: 14px;
+    }
+  }
+}
+
+//
+// Shopping cart table head
+.cart-table-head {
+  background-color: @cart-table-head-background-color;
+  @media (max-width: @screen-sm-min) {
+    display: none;
+  }
+
+  &-product {
+    width: 8%;
+  }
+
+  &-description {
+    width: auto;
+  }
+
+  &-price {
+    width: 12%;
+  }
+
+  &-quantity {
+    width: 12%;
+  }
+
+  &-total {
+    width: 12%;
+    text-align: right;
+  }
+
+  &-delete {
+    width: 12%;
+  }
+}
+
+//
+// Shopping cart subhead for mobile view
+.subhead-hidden {
+  display: none;
+  @media (max-width: @screen-sm-min) {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+  }
+}
+
+//
+// Shopping cart item for mobile view
+.item-hidden {
+  display: none;
+  @media (max-width: @screen-sm-min) {
+    display: block;
+  }
+}
+
+//
+// Shopping cart total list
+.cart-totals {
+  float: right;
+  font-size: @alto-theme-font-size;
+}
+
+.cart-totals-table {
+
+  td {
+    padding: @alto-theme-padding / 2;
+  }
+
+  td {
+    font-weight: 300;
+    text-align: right;
+  }
+
+  .sub-total {
+    font-size: 17px;
+    font-weight: 400;
+  }
+
+  .grand-total {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 21px;
+  }
+}
+
+//
+// Shopping cart checkout button
+.cart-button-checkout {
+  .alto-theme-button;
+  .alto-theme-button-primary;
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+}

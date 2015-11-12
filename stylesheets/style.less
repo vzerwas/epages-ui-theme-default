@@ -1,0 +1,86 @@
+// font AWESOME
+// -------------------------
+@import "../vendor/font-awesome/less/font-awesome";
+@fa-font-path: "../vendor/font-awesome/fonts";
+
+// Core Bootstrap variables and mixins
+// -------------------------
+@import "../vendor/bootstrap/less/variables.less";
+@import "../vendor/bootstrap/less/mixins.less";
+
+// Normalizer
+// -------------------------
+@import "../vendor/bootstrap/less/normalize.less";
+
+// Default modules
+// -------------------------
+@import "../vendor/bootstrap/less/scaffolding.less";
+@import "../vendor/bootstrap/less/type.less";
+@import "../vendor/bootstrap/less/grid.less";
+@import "../vendor/bootstrap/less/forms.less";
+@import "../vendor/bootstrap/less/buttons.less";
+@import "../vendor/bootstrap/less/input-groups.less";
+@import "../vendor/bootstrap/less/breadcrumbs.less";
+@import "../vendor/bootstrap/less/utilities.less";
+
+// Shop modules
+// -------------------------
+
+// Partials
+@import "modules/custom-variables.less";
+@import "modules/layout.less";
+@import "modules/list-grids.less";
+@import "modules/buttons.less";
+@import "modules/mixins.less";
+@import "modules/forms.less";
+@import "modules/resets.less";
+@import "modules/icons.less";
+
+// Sections
+@import "modules/product.less";
+@import "modules/product-lists.less";
+@import "modules/cart.less";
+@import "modules/categories.less";
+@import "modules/search.less";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 130%;
+}
+
+@media (min-width: @screen-sm) {
+  body {
+    font-size: 140%;
+  }
+}
+@media (min-width: @screen-md) {
+  body {
+    font-size: 160%;
+  }
+}
+
+img {
+  display: inherit;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: @alto-theme-brand-primary;
+  &:hover {
+    text-decoration: none;
+    color: darken(@alto-theme-brand-primary, 10%);
+  }
+  &:focus {
+    text-decoration: none;
+    color: lighten(@alto-theme-brand-primary, 10%);
+  }
+}
+
+// Todo: Quick reset to overwrite Bootstrap style. Maybe not needed. Refactor it.
+.row {
+  margin: 0;
+}

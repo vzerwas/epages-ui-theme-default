@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <header class="site-header">
+    <div class="site-header-logo">
+        <a href="{baseUrl}" title="{shop.title}"><img src="{shop.logo.url}" alt="{shop.title}" /></a>
+    </div>
+
+    <div class="site-header-search">
+      <form class="search-form" method="get" action="{baseUrl}/search" autocomplete="off">
+        <label class="search-form-label" for="search-label">
+          <i class="fa fa-search"></i>
+        </label>
+        <input class="search-form-field" type="text" name="query" value="{products.queryString}" placeholder="Search for" />
+        <input type="hidden" name="page" value="1"/>
+        <input type="hidden" name="sort" value="{products.activeSort}"/>
+        <div id="suggested-result" class="search-form-suggestions"></div>
+      </form>
+    </div>
+
+    {#cart}
+    <div class="site-header-minicart">
+      <a class="site-header-minicart-checkout" href="{baseUrl}/cart">
+        <span class="fa fa-2x fa-shopping-cart site-header-minicart-icon"></span>
+        <span class="site-header-minicart-badge">{totalNumberOfItems}</span>
+      </a>
+      <div class="minicart-container">
+      {?lineItems}
+        <ul class="minicart-list">
+          {#lineItems}
+          <li class="minicart-list-item">
+            <img class="minicart-list-item-image" src="{images[0].url}" />
+            <div class="minicart-list-item-product">
+              <p class="minicart-list-item-product-name">{name}</p>
+              <span class="minicart-list-item-product-quantity">{quantity.amount} {quantity.unit}</span>
+            </div>
+          </li>
+          {/lineItems}
+        </ul>
+      {/lineItems}
+      </div>
+    </div>
+    {/cart}
+  </header>
+  {?isEditor}<div data-navigation-type="main">{/isEditor}{>"navigation-main"/}{?isEditor}</div>{/isEditor}
+  {+content/}
+  {^isEditor}
+  <script type="text/javascript">
+    window.epages.suggestedSearch('.search-form-field', '.search-form-suggestions');
+  </script>
+  {/isEditor}
+</div>

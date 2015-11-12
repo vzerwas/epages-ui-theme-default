@@ -1,0 +1,41 @@
+.category-product-grid {
+  margin-bottom: 2em;
+}
+
+.product-list-display-top {
+  margin: 40px 0 20px;
+  .clearfix();
+}
+
+.product-list-pagination {
+  display: inline-block;
+  float: right;
+
+  & a {
+    padding: 5px;
+    color: lighten(@alto-theme-brand-text, 45%);
+
+    &:hover {
+      color: @alto-theme-brand-text;
+    }
+
+    &.product-list-pagination-current {
+      color: @alto-theme-brand-text;
+      font-weight: bold;
+    }
+  }
+}
+
+.product-list-sorting {
+  float: left;
+  display: inline-block;
+
+  &-items {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+.product-list-display-bottom {
+  margin-top: 20px;
+}
