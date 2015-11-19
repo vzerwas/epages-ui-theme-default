@@ -1,0 +1,14 @@
+{
+  "default": {
+    "pages": [
+      "content/default/pages/startpage.json",
+      "content/default/pages/aboutme.json"
+    ],
+    "images": {
+      "hero": "content/default/images/main-hero-image.jpg",
+      "cat1": "content/default/images/category-teaser-image-1.jpg",
+      "cat2": "content/default/images/category-teaser-image-2.jpg",
+      "cat3": "content/default/images/category-teaser-image-3.jpg"
+    }
+  }
+}

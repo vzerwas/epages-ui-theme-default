@@ -1,0 +1,24 @@
+{
+  "slug": "aboutme",
+  "type": "blank",
+  "title": "About me",
+  "elements": [],
+  "grid": {
+    "rows": [
+      {
+        "columns": [
+          {
+            "elements": [
+              {
+                "type": "epages.text",
+                "data": {
+                  "content": "<h1>About me</h1><p>This is the about me page.</p>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
