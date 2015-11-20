@@ -19,7 +19,7 @@
     {#cart}
     <div class="site-header-minicart">
       <a class="site-header-minicart-checkout" href="{baseUrl}/cart">
-        <span class="fa fa-2x fa-shopping-cart site-header-minicart-icon"></span>
+        <span class="site-header-minicart-icon"></span>
         <span class="site-header-minicart-badge">{totalNumberOfItems}</span>
       </a>
       <div class="minicart-container">
