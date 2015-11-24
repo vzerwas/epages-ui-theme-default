@@ -12,7 +12,51 @@
               {
                 "type": "epages.text",
                 "data": {
-                  "content": "<h1>About me</h1><p>This is the about me page.</p>"
+                  "content": "<h1>About me</h1><p>Spotlight is a powerful and clean theme – carefully tuned for mobile, tablet, and retina devices. Spotlight allows your products to shine with a clean minimal design, while giving your customers a great experience on any device.</p><ul><li>Excepteur sint</li><li>Occaecat cupidatat non proident</li><li>Sunt in culpa qui officia</li><li>Deserunt mollit</li><li>Anim id est laborum</li></ul>"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "columns": [
+          {
+            "elements": [
+              {
+                "type": "epages.image",
+                "data": {
+                  "src": "{images.per1}",
+                  "alt": "",
+                  "link": "",
+                  "opentab": false
+                }
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "epages.image",
+                "data": {
+                  "src": "{images.per2}",
+                  "alt": "",
+                  "link": "",
+                  "opentab": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "columns": [
+          {
+            "elements": [
+              {
+                "type": "epages.text",
+                "data": {
+                  "content": "<h2><strong>Heading 2</strong></h2><p>This is nonsense demo text. Artisan reprehenderit butcher Tumblr seitan. Distillery nesciunt Banksy master cleanse kale chips. Exercitation accusamus in, kale chips synth Marfa bitters voluptate eiusmod four dollar toast fixie retro church-key. Sunt next level duis Kickstarter, tilde et Bushwick vero anim health goth. Pug bicycle rights excepteur cardigan street art, before they sold out post-ironic Truffaut tousled.</p><p>&nbsp;<br></p><h3><strong>Heading 3</strong></h3><p>This is nonsense demo text. Artisan reprehenderit butcher Tumblr seitan. Distillery nesciunt Banksy master cleanse kale chips. Exercitation accusamus in, kale chips synth Marfa bitters voluptate eiusmod four dollar toast fixie retro church-key. Sunt next level duis Kickstarter, tilde et Bushwick vero anim health goth. Pug bicycle rights excepteur cardigan street art, before they sold out post-ironic Truffaut tousled.</p><blockquote><p>\"The trouble with our times is that the future is not what it used to be.”</p></blockquote><p>~&nbsp;Paul Valery</p><p><br></p><p><br></p>"
                 }
               }
             ]
