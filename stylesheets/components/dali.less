@@ -19,19 +19,21 @@
 }
 
 //
-// Dali grid
-.dali-grid-row {
-  flex-wrap: wrap;
-}
-
-.dali-grid .dali-grid-row > * {
+// Dali: responsive behavior
+.dali-grid:not(.dali-grid-editview) .dali-grid-row > * {
 
   @media (max-width: @screen-md) {
     margin: 0;
   }
 }
 
-.dali-grid-column {
+// Row
+.dali-grid:not(.dali-grid-editview) .dali-grid-row {
+  flex-wrap: wrap;
+}
+
+// Column
+.dali-grid:not(.dali-grid-editview) .dali-grid-column {
   flex: 1 0 0;
   @media (max-width: @screen-md) {
     display: block;
@@ -42,24 +44,25 @@
     display: block;
     flex: 1 0 100%;
   }
-}
 
-.dali-grid-column:nth-child(1) {
-  @media (max-width: @screen-md) {
-    margin-right: @base-margin * 1.5;
+  &:nth-child(1) {
+    @media (max-width: @screen-md) {
+      margin-right: @base-margin * 1.5;
+    }
+
+    @media (max-width: @screen-sm) {
+      margin-right: 0;
+    }
+
   }
 
-  @media (max-width: @screen-sm) {
-    margin-right: 0;
-  }
-}
+  &:nth-child(4) {
+    @media (max-width: @screen-md) {
+      margin-left: @base-margin * 1.5;
+    }
 
-.dali-grid-column:nth-child(4) {
-  @media (max-width: @screen-md) {
-    margin-left: @base-margin * 1.5;
-  }
-
-  @media (max-width: @screen-sm) {
-    margin-left: 0;
+    @media (max-width: @screen-sm) {
+      margin-left: 0;
+    }
   }
 }

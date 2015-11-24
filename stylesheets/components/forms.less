@@ -9,17 +9,13 @@
 
 //
 // Placeholder colors
-@input-placeholder-color:  darken(@input-border-color, 30%);
+@input-placeholder-color:  lighten(@brand-secondary, 30%);
 
 
 // ---------- Styling ---------- //
 
-//
-// Placeholder mixin
-.input-placeholder-color() {
-  ::-webkit-input-placeholder {color: @input-placeholder-color;}
-  ::-moz-placeholder {color: @input-placeholder-color;}
-  :-ms-input-placeholder {color: @input-placeholder-color;}
+input::placeholder {
+  color: @input-placeholder-color;
 }
 
 //
@@ -52,8 +48,6 @@
 //Search input field
 
 .search-form {
-  .input-placeholder-color();
-
   position: relative;
 
   &-label {
