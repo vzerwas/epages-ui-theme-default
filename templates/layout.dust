@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="wrapper">
   <header class="site-header">
     <div class="site-header-logo">
         <a href="{baseUrl}" title="{shop.title}"><img src="{shop.logo.url}" alt="{shop.title}" /></a>
