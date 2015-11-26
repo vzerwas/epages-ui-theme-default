@@ -1,7 +1,9 @@
 {>"layout"/}
 
 {<content}
-  <h3>404 error</h3>
-  <p>Sorry, the {pageType} you're looking for does not exist</p>
-  <p><a href="{baseUrl}">Click here to return to the start page.</a></p>
+  <section class="error-404">
+    <h3>404 error</h3>
+    <p>Sorry, the {pageType} you're looking for does not exist</p>
+    <p><a href="{baseUrl}">Click here to return to the start page.</a></p>
+  </section>
 {/content}

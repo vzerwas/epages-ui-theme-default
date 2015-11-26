@@ -3,10 +3,10 @@
     "pages": [
       "content/default/pages/startpage.json",
       "content/default/pages/aboutme.json",
-      "content/default/pages/contact.json"
+      "content/default/pages/contact.json",
+      "content/default/pages/category.json"
     ],
     "images": {
-      "hero": "content/default/images/main-hero-image.jpg",
       "cat1": "content/default/images/category-teaser-image-1.jpg",
       "cat2": "content/default/images/category-teaser-image-2.jpg",
       "cat3": "content/default/images/category-teaser-image-3.jpg",
@@ -14,9 +14,11 @@
       "per2": "content/default/images/about-me-person-2.jpg",
       "store": "content/default/images/in-store.jpg",
       "home-start": "content/default/images/home-header-start.jpg",
-      "prod-cloves": "content/default/images/home-product-teaser-cloves.jpg",
+      "prod-gloves": "content/default/images/home-product-teaser-gloves.jpg",
       "prod-man": "content/default/images/home-product-teaser-man.jpg",
-      "prod-scarves": "content/default/images/home-product-teaser-scarves.jpg"
+      "prod-scarves": "content/default/images/home-product-teaser-scarves.jpg",
+      "about": "content/default/images/home-about-us.jpg",
+      "category": "content/default/images/categories.jpg"
     }
   }
 }

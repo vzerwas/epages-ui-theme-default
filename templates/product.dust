@@ -1,59 +1,58 @@
 {>"layout"/}
 
 {<content}
+<section class="product">
+  <div class="product-detail-page">
+    <div>
+      {#product.slideshow}
+        <input type="checkbox" id="product-image-gallery-lb-toggle"/>{!lightbox toggle - experimental!}
+        <div class="product-image-gallery">
+          {#images}
+            <input type="radio" name="product-image-slide-switch" id="product-image-slide-switch-{$idx}"
+                   {?isFirst}checked="checked"{/isFirst}/>
+            <label for="product-image-slide-switch-{$idx}">
+              <picture class="product-image-gallery-thumbnail">
+                <source media="(min-width: 1024px)" srcset="{url}&width=1000&height=1000">
+                <source media="(min-width: 680px)" srcset="{url}&width=500&height=500">
+                <source srcset="{url}&width=200&height=200">
+                <img src="{url}&width=1000&height=1000" alt="{product.title}">
+              </picture>
+            </label>
+            <div class="product-image-gallery-stage">
+              <picture class="product-image-gallery-image">
+                <source media="(min-width: 1024px)" srcset="{url}&width=1000&height=1000">
+                <source media="(min-width: 680px)" srcset="{url}&width=500&height=500">
+                <source srcset="{url}&width=200&height=200">
+                <img src="{url}&width=1000&height=1000" alt="{product.title}">
+              </picture>
+            </div>
+          {/images}
+          <label for="product-image-gallery-lb-toggle"></label>
+        </div>
 
-<div class="product-detail-page">
+        {:error}{!:error, not {:else} since this is a promise!}
+        <img class="product-detail-page-image" src="{product.image.url}" alt="{product.title}" />
+      {/product.slideshow}
+    </div>
 
-  <div>
-    {#product.slideshow}
-      <input type="checkbox" id="product-image-gallery-lb-toggle"/>{!lightbox toggle - experimental!}
-      <div class="product-image-gallery">
-        {#images}
-          <input type="radio" name="product-image-slide-switch" id="product-image-slide-switch-{$idx}"
-                 {?isFirst}checked="checked"{/isFirst}/>
-          <label for="product-image-slide-switch-{$idx}">
-            <picture class="product-image-gallery-thumbnail">
-              <source media="(min-width: 1024px)" srcset="{url}&width=1000&height=1000">
-              <source media="(min-width: 680px)" srcset="{url}&width=500&height=500">
-              <source srcset="{url}&width=200&height=200">
-              <img src="{url}&width=1000&height=1000" alt="{product.title}">
-            </picture>
-          </label>
-          <div class="product-image-gallery-stage">
-            <picture class="product-image-gallery-image">
-              <source media="(min-width: 1024px)" srcset="{url}&width=1000&height=1000">
-              <source media="(min-width: 680px)" srcset="{url}&width=500&height=500">
-              <source srcset="{url}&width=200&height=200">
-              <img src="{url}&width=1000&height=1000" alt="{product.title}">
-            </picture>
-          </div>
-        {/images}
-        <label for="product-image-gallery-lb-toggle"></label>
+    <div>
+      <h1 class="product-title">{product.title}</h1>
+      <h3 class="product-price">{product.price}</h3>
+      <div class="product-availability">
+        <span class="product-availability-icon {product.stockLevelClass}-stock-icon"></span>
+        <p class="product-availability-text">{product.availabilityText}</p>
       </div>
 
-      {:error}{!:error, not {:else} since this is a promise!}
-      <img class="product-detail-page-image" src="{product.image.url}" alt="{product.title}" />
-    {/product.slideshow}
-  </div>
-
-  <div>
-    <h1 class="product-title">{product.title}</h1>
-    <h3 class="product-price">{product.price}</h3>
-    <div class="product-availability">
-      <span class="product-availability-icon {product.stockLevelClass}-stock-icon"></span>
-      <p class="product-availability-text">{product.availabilityText}</p>
-    </div>
-
-    {#cart.button}
-      <label class="product-quantity-label">Quantity: <input class="product-quantity-input-field" type="number" name="quantity" id="quantity" value="1" min="1" /></label>
-      <button class="product-add-cart-button" type="submit"{^product.available} disabled="disabled"{/product.available}>
-        <span class="product-add-cart-button-icon"></span>Add to basket
-      </button>
-    {/cart.button}
-    <div class="product-description">
-      {product.description|s}
+      {#cart.button}
+        <label class="product-quantity-label">Quantity: <input class="product-quantity-input-field" type="number" name="quantity" id="quantity" value="1" min="1" /></label>
+        <button class="product-add-cart-button" type="submit"{^product.available} disabled="disabled"{/product.available}>
+          <span class="product-add-cart-button-icon"></span>Add to basket
+        </button>
+      {/cart.button}
+      <div class="product-description">
+        {product.description|s}
+      </div>
     </div>
   </div>
-
-</div>
+</section>
 {/content}

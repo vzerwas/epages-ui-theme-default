@@ -1,7 +1,58 @@
 {>"layout"/}
 
 {<content}
-  <h1>Welcome to the <em>{shop.title}</em> shop</h1>
-  <hr />
-  {@content/}
+  <section class="startpage">
+    <header class="startpage-header">
+      {@plugin type="epages.image" id="header-image-start"/}
+    </header>
+
+    <section class="startpage-offer">
+      <article class="startpage-offer-column">
+        <header>
+          {@plugin type="epages.text" id="article-text-1"/}
+        </header>
+        {@plugin type="epages.image" id="article-image-1"/}
+      </article>
+
+      <article class="startpage-offer-column">
+        <header>
+          {@plugin type="epages.text" id="article-text-2"/}
+        </header>
+        {@plugin type="epages.image" id="article-image-2"/}
+      </article>
+
+      <article class="startpage-offer-column">
+        <header>
+          {@plugin type="epages.text" id="article-text-3"/}
+        </header>
+        {@plugin type="epages.image" id="article-image-3"/}
+      </article>
+    </section>
+
+    <section class="startpage-feature-products">
+      <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+      {#products}
+        <li>
+          <a href="{href}">
+            <div class="center-image-container">
+              <img class="product-image" src="{image.url}" alt="{title}" />
+            </div>
+            <h2 class="product-title">{title}</h2>
+            <h3 class="product-price">{price}</h3>
+          </a>
+        </li>
+      {/products}
+      </ul>
+    </section>
+
+    <section class="startpage-about">
+      <article class="startpage-about-column">
+        <header class="startpage-about-column-header">
+          {@plugin type="epages.text" id="article-text-4"/}
+        </header>
+        {@plugin type="epages.image" id="article-image-4"/}
+      </article>
+    </section>
+
+  </section>
 {/content}

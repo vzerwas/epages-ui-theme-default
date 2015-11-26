@@ -1,8 +1,8 @@
 @minicart-container-box-shadow-color: lighten(@brand-secondary, 60%);
-@minicart-container-border-color: lighten(@brand-secondary, 60%);
-@minicart-container-triangle-color: @brand-white;
-@minicart-badge-background-color: rgb(121, 178, 11);
-@minicart-badge-text-color: @brand-white;
+@minicart-container-border-color:     lighten(@brand-secondary, 60%);
+@minicart-container-triangle-color:   @brand-white;
+@minicart-badge-background-color:     lighten(@brand-secondary, 40%);
+@minicart-badge-text-color:           @brand-white;
 
 //
 // Arrow box
@@ -37,7 +37,7 @@
 
 //
 // Header styling with logo, search field and mini cart
-.site-header {
+.header {
   position: relative;
   display: flex;
   width: 100%;
@@ -105,8 +105,9 @@
       display: inline-block;
       font-size: 12px;
       text-align: center;
-      vertical-align: text-bottom;
+      vertical-align: top;
       white-space: nowrap;
+      margin-top: 6px;
       margin-left: 10px;
       padding: 5px 10px;
       line-height: 1.4;
@@ -180,12 +181,13 @@
 }
 
 // Main Navigation styling
-.main-navigation {
+.navigation {
   position: relative;
+  border-top: 3px solid @navigation-border;
+  padding-top: 3px;
 
   ul {
     .list-unstyled;
-    background-color: @brand-primary;
 
     @media (max-width: @screen-sm-max) {
       display: none;
@@ -195,7 +197,6 @@
       display: block;
       position: relative;
       float: left;
-      background-color: @brand-primary;
 
       a {
         display: block;
@@ -203,7 +204,7 @@
         text-decoration: none;
         white-space: nowrap;
         font-weight: 300;
-        color: @brand-white;
+        color: @brand-text;
 
         @media (max-width: @screen-sm-max) {
           display: inline-block;
@@ -212,7 +213,7 @@
         }
 
         &:hover {
-          background-color: darken(@brand-primary, 5%);
+          background-color: @navigation-background-item-hover;
         }
       }
 
@@ -265,7 +266,7 @@
 
   // Shows active navigation item
   &-active {
-    background-color: darken(@brand-primary, 5%);
+    background-color: @navigation-background-item-active;
   }
 }
 
@@ -341,4 +342,43 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
   border: 0;
+}
+
+
+.main {
+  margin: 40px 0;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row;
+  background-color: lighten(@brand-secondary, 70%);
+  padding: 20px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+
+  &-list {
+    .list-unstyled;
+
+    &-item {
+      display: inline;
+
+      &::after {
+        content: '/';
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      &-link {
+        color: @brand-text;
+      }
+
+      &:last-child {
+        &::after {
+          content: normal;
+        }
+      }
+    }
+  }
 }
