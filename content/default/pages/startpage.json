@@ -12,7 +12,7 @@
               {
                 "type": "epages.image",
                 "data": {
-                  "src": "{images.hero}",
+                  "src": "{images.home-start}",
                   "alt": "",
                   "link": "",
                   "opentab": false
@@ -27,18 +27,18 @@
           {
             "elements": [
               {
-                "type": "epages.image",
+                "type": "epages.text",
                 "data": {
-                  "src": "{images.cat1}",
-                  "alt": "",
-                  "link": "",
-                  "opentab": false
+                  "content": "<p>New products</p><h2>Warm Cloves</h2>"
                 }
               },
               {
-                "type": "epages.text",
+                "type": "epages.image",
                 "data": {
-                  "content": "<p style=\"text-align: center;\">Don't know what to cook? Have a look at our recipe collection.</p>"
+                  "src": "{images.prod-cloves}",
+                  "alt": "",
+                  "link": "",
+                  "opentab": false
                 }
               }
             ]
@@ -46,18 +46,18 @@
           {
             "elements": [
               {
-                "type": "epages.image",
+                "type": "epages.text",
                 "data": {
-                  "src": "{images.cat2}",
-                  "alt": "",
-                  "link": "",
-                  "opentab": false
+                  "content": "<p>New fashion</p><h2>For man</h2>"
                 }
               },
               {
-                "type": "epages.text",
+                "type": "epages.image",
                 "data": {
-                  "content": "<p style=\"text-align: center;\">Get inspiration for your next breakfast. We also offer some nice product bundles.</p>"
+                  "src": "{images.prod-man}",
+                  "alt": "",
+                  "link": "",
+                  "opentab": false
                 }
               }
             ]
@@ -65,32 +65,18 @@
           {
             "elements": [
               {
-                "type": "epages.image",
+                "type": "epages.text",
                 "data": {
-                  "src": "{images.cat3}",
-                  "alt": "",
-                  "link": "",
-                  "opentab": false
+                  "content": "<p>Special offers</p><h2>Colourful scarves</h2>"
                 }
               },
               {
-                "type": "epages.text",
+                "type": "epages.image",
                 "data": {
-                  "content": "<p style=\"text-align: center;\">Our kitchen tools make cooking easy and go well with our recipes.</p>"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "columns": [
-          {
-            "elements": [
-              {
-                "type": "epages.text",
-                "data": {
-                  "content": "<h2>Cooking is our passion</h2><p><br></p><p>Looking for food? Look no further, {shop.title} has it all. Our online shop provides the full catalog: Chocolate, coffee, wine, recipes and everything else. We offer free shipping as well as major payment options. Be sure to sign up for our newsletter to get the latest news and special deals right in your inbox!</p><p>{shop.title} gets you started with our finest collections&mdash;no matter if it\"s a dinner party, a business event or that special from a movie. We have you covered. Check our blog for more delicious articles as well as cooking tips and tricks.</p>"
+                  "src": "{images.prod-scarves}",
+                  "alt": "",
+                  "link": "",
+                  "opentab": false
                 }
               }
             ]
