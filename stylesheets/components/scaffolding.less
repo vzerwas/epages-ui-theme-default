@@ -1,0 +1,52 @@
+* {
+  .box-sizing(border-box);
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // for touch devices
+}
+
+body {
+  font-family: @font-family;
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @global-text-color;
+  background-color: @body-bg;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+label {
+  display: inline-block;
+}
+
+a {
+  color: @global-link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @global-link-hover-color;
+    text-decoration: none;
+  }
+}
+
+/* todo: delete it if we want to use this in normalize.less */
+figure {
+  margin: 0;
+}
+
+hr {
+  margin-top: @base-margin;
+  margin-bottom: @base-margin;
+  border: 0;
+  border-top: 1px solid @hr-border;
+}

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="wrapper">
   <header class="site-header">
     <div class="site-header-logo">
         <a href="{baseUrl}" title="{shop.title}"><img src="{shop.logo.url}" alt="{shop.title}" /></a>
@@ -19,7 +19,7 @@
     {#cart}
     <div class="site-header-minicart">
       <a class="site-header-minicart-checkout" href="{baseUrl}/cart">
-        <span class="fa fa-2x fa-shopping-cart site-header-minicart-icon"></span>
+        <span class="site-header-minicart-icon"></span>
         <span class="site-header-minicart-badge">{totalNumberOfItems}</span>
       </a>
       <div class="minicart-container">

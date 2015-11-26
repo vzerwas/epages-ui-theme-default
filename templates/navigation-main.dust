@@ -8,7 +8,7 @@
     <input type="checkbox" id="trigger" class="trigger visually-hidden"/>
     <ul>
       {#pages}
-        {>"nested-page-list"/}
+        {>"components/nested-page-list"/}
       {/pages}
     </ul>
   </nav>

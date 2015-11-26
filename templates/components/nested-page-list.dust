@@ -3,7 +3,7 @@
   {?.children}
     <ul>
       {#.children}
-        {>"nested-page-list"/}
+        {>"components/nested-page-list"/}
       {/.children}
     </ul>
   {/.children}

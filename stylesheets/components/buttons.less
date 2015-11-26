@@ -1,0 +1,31 @@
+.button {
+  padding: 10px 30px;
+  font-size: @font-size;
+  border: 0;
+  border-radius: @button-border-radius;
+  outline: none;
+
+  &:focus {
+    text-decoration: none;
+    color: @brand-white;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Default
+.button-default {
+  background-color: @button-background-color-default;
+  color: white;
+  .button-hover-color(darken(@button-background-color-default, 20%), @button-text-color-default); // Hover
+}
+
+// Primary
+.button-primary {
+  background-color: @button-background-color-primary;
+  color: @button-text-color-primary;
+  .button-hover-color(darken(@button-background-color-primary, 10%), @button-text-color-primary); // Hover
+}
