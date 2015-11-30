@@ -1,7 +1,7 @@
 <div class="wrapper">
   <header class="site-header">
     <div class="site-header-logo">
-        <a href="{baseUrl}" title="{shop.title}"><img src="{shop.logo.url}" alt="{shop.title}" /></a>
+      <a href="{baseUrl}" title="{shop.title}"><img src="{shop.logo.url}" alt="{shop.title}" /></a>
     </div>
 
     <div class="site-header-search">
@@ -41,7 +41,19 @@
     {/cart}
   </header>
   {?isEditor}<div data-navigation-type="main">{/isEditor}{>"navigation-main"/}{?isEditor}</div>{/isEditor}
+
   {+content/}
+
+  <footer class="footer">
+    <ul class="footer-list">
+    {#legal}
+      <li class="footer-list-item">
+        <a href="{href}" class="footer-list-item-link">{title}</a>
+      </li>
+    {/legal}
+    </ul>
+  </footer>
+
   {^isEditor}
   <script type="text/javascript">
     window.epages.suggestedSearch('.search-form-field', '.search-form-suggestions');
