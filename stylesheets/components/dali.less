@@ -1,10 +1,20 @@
 //
 // Typography
-.dali-plugin-text-content h2 {
 
+.dali-plugin-text-content h1 {
+  font-size: @font-size-h1;
+}
+
+.dali-plugin-text-content h2 {
+ font-size: @font-size-h2;
+}
+
+.dali-plugin-text-content h3 {
+  font-size: @font-size-h3;
 }
 
 .dali-plugin-text-content p {
+  margin-bottom: 20px;
 }
 
 .dali-plugin-text-content ul {
@@ -15,54 +25,53 @@
 
 }
 
-.dali-plugin-image {
-}
-
 //
 // Dali: responsive behavior
-.dali-grid:not(.dali-grid-editview) .dali-grid-row > * {
+//
+// :not(.dali-grid-editview) is necessary to a avoid
+// the responsive behavior in editor mode
 
-  @media (max-width: @screen-md) {
-    margin: 0;
-  }
+// General grid
+.dali-grid:not(.dali-grid-editview) > * {
+  margin: 0;
 }
 
 // Row
 .dali-grid:not(.dali-grid-editview) .dali-grid-row {
   flex-wrap: wrap;
+  margin: 0 0 @base-margin;
 }
 
 // Column
 .dali-grid:not(.dali-grid-editview) .dali-grid-column {
-  flex: 1 0 0;
+  margin: 0 (@base-margin * 2) 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
   @media (max-width: @screen-md) {
-    display: block;
-    flex: 1 0 47%;
+    flex-basis: 40%;
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
   }
 
   @media (max-width: @screen-sm) {
-    display: block;
-    flex: 1 0 100%;
-  }
+    flex-basis: 100%;
+    margin: 0 0 @base-margin 0;
 
-  &:nth-child(1) {
-    @media (max-width: @screen-md) {
-      margin-right: @base-margin * 1.5;
-    }
-
-    @media (max-width: @screen-sm) {
-      margin-right: 0;
-    }
-
-  }
-
-  &:nth-child(4) {
-    @media (max-width: @screen-md) {
-      margin-left: @base-margin * 1.5;
-    }
-
-    @media (max-width: @screen-sm) {
-      margin-left: 0;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
+}
+
+.dali-grid:not(.dali-grid-editview) .dali-grid-column > * {
+  margin: 0 0 @base-margin 0;
+}
+
+.dali-grid:not(.dali-grid-editview) .dali-grid-column > :last-child {
+  margin-bottom: @base-margin;
 }

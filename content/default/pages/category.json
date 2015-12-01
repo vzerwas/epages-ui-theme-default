@@ -1,0 +1,17 @@
+{
+  "slug": "category",
+  "type": "category",
+  "title": "Category",
+  "elements": [
+    {
+      "id": "category",
+      "type": "epages.image",
+      "data": {
+        "src": "{images.category}",
+        "alt": "",
+        "link": "",
+        "opentab": false
+      }
+    }
+  ]
+}

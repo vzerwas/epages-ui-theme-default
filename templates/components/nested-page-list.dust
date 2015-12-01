@@ -1,5 +1,5 @@
 <li>
-  <a {?.isInBreadcrumb}class="main-navigation-active" {/.isInBreadcrumb}href="{.href}">{title}</a>
+  <a {?.isInBreadcrumb}class="navigation-active" {/.isInBreadcrumb}href="{.href}">{title}</a>
   {?.children}
     <ul>
       {#.children}

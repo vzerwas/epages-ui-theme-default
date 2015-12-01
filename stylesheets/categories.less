@@ -48,13 +48,15 @@
   }
 
   .product-price {
-    font-size: 2em;
     margin: 0;
+    font-size: 2.4em;
+    font-weight: 600;
   }
 
   .product-title {
-    font-size: 2.5em;
-    margin: 0 0 .3em;
+    margin: 0 0 .4em;
+    font-size: 1.8em;
+    font-weight: 400;
   }
 
   .center-image-container {
@@ -63,16 +65,17 @@
     height: 100%;
     min-height: 20em;
     max-height: 20em;
-    margin-bottom: 1em;
+    margin-bottom: 2.5em;
+    border-bottom: 2px solid @brand-secondary;
 
     @media (min-width: @screen-sm) {
-      min-height: 26em;
-      max-height: 26em;
+      min-height: 22em;
+      max-height: 22em;
     }
 
     @media (min-width: @screen-md) {
-      min-height: 28em;
-      max-height: 28em;
+      min-height: 24em;
+      max-height: 24em;
     }
 
     .product-image {
@@ -84,6 +87,7 @@
       margin: auto;
       max-width: 100%;
       max-height: 100%;
+      padding-bottom: 3em;
     }
   }
 }

@@ -1,80 +1,82 @@
 {>"layout"/}
 
 {<content}
-  {#cart}
-  {^lineItems}
-    <h1>Shopping bag is empty</h1>
-    <div class="cart-empty-note">
-      <h3>You have no items in your shopping bag</h3>
-      <p class="cart-empty-note-text"><a href="{baseUrl}">Click here</a> to continue shopping.</p>
-    </div>
-  {:else}
-    <h1>Your shopping bag selections</h1>
-    <table class="cart-table">
-    <thead class="cart-table-head">
-      <tr>
-        <th class="cart-table-head-product">Product</th>
-        <th class="cart-table-head-description"></th>
-        <th class="cart-table-head-price">Price</th>
-        <th class="cart-table-head-quantity">Quantity</th>
-        <th class="cart-table-head-delete"></th>
-        <th class="cart-table-head-total">Total price</th>
-      </tr>
-    </thead>
-    <tbody>
-    {#lineItems}
-      <tr>
-        <td class="cart-table-item-product"><img class="cart-table-item-product-image" src="{images[0].url}" /></td>
-        <td class="cart-table-item-description"><h2 class="cart-table-item-description-headline">{name}</h2></td>
-        <td class="cart-table-item-price"><span class="subhead-hidden">Price</span>{singleItemPrice.formatted} / {quantity.unit}</td>
-        <td class="cart-table-item-quantity">
-          <span class="subhead-hidden">Quantity</span>
-          <form action="{baseUrl}{updateUrl}" method="post">
-            <input class="cart-table-item-quantity-input" type="number" name="quantity" id="lineItemQuantity-{lineItemId}"
-              value="{quantity.amount}" onBlur="this.form.submit()"/>
-          </form>
-        </td>
-        <td class="cart-table-item-delete"><a class="cart-table-item-delete-link" href="{baseUrl}{deleteUrl}">
-          <span class="cart-table-item-delete-icon"></span>Delete</a>
-        </td>
-        <td class="cart-table-item-total"><span class="subhead-hidden">Total price</span>{lineItemPrice.formatted}</td>
-        <td class="cart-table-item-delete item-hidden"><a class="cart-table-item-delete-link" href="{baseUrl}{deleteUrl}">
-          <span class="cart-table-item-delete-icon"></span>Delete</a>
-        </td>
-      </tr>
-    {/lineItems}
-    </tbody>
+  <section class="cart">
+    {#cart}
+    {^lineItems}
+      <h1>Shopping bag is empty</h1>
+      <div class="cart-empty-note">
+        <h3>You have no items in your shopping bag</h3>
+        <p class="cart-empty-note-text"><a href="{baseUrl}">Click here</a> to continue shopping.</p>
+      </div>
+    {:else}
+      <h1>Your shopping bag selections</h1>
+      <table class="cart-table">
+      <thead class="cart-table-head">
+        <tr>
+          <th class="cart-table-head-product">Product</th>
+          <th class="cart-table-head-description"></th>
+          <th class="cart-table-head-price">Price</th>
+          <th class="cart-table-head-quantity">Quantity</th>
+          <th class="cart-table-head-delete"></th>
+          <th class="cart-table-head-total">Total price</th>
+        </tr>
+      </thead>
+      <tbody>
+      {#lineItems}
+        <tr>
+          <td class="cart-table-item-product"><img class="cart-table-item-product-image" src="{images[0].url}" /></td>
+          <td class="cart-table-item-description"><h2 class="cart-table-item-description-headline">{name}</h2></td>
+          <td class="cart-table-item-price"><span class="subhead-hidden">Price</span>{singleItemPrice.formatted} / {quantity.unit}</td>
+          <td class="cart-table-item-quantity">
+            <span class="subhead-hidden">Quantity</span>
+            <form action="{baseUrl}{updateUrl}" method="post">
+              <input class="cart-table-item-quantity-input" type="number" name="quantity" id="lineItemQuantity-{lineItemId}"
+                value="{quantity.amount}" onBlur="this.form.submit()"/>
+            </form>
+          </td>
+          <td class="cart-table-item-delete"><a class="cart-table-item-delete-link" href="{baseUrl}{deleteUrl}">
+            <span class="cart-table-item-delete-icon"></span>Delete</a>
+          </td>
+          <td class="cart-table-item-total"><span class="subhead-hidden">Total price</span>{lineItemPrice.formatted}</td>
+          <td class="cart-table-item-delete item-hidden"><a class="cart-table-item-delete-link" href="{baseUrl}{deleteUrl}">
+            <span class="cart-table-item-delete-icon"></span>Delete</a>
+          </td>
+        </tr>
+      {/lineItems}
+      </tbody>
 
-    </table>
-    <div class="cart-totals">
-      <table class="cart-totals-table">
-        <tbody>
-        <tr>
-          <td class="shipping-price">Shipping price</td>
-          <td class="shipping-price">{cart.lineItemContainer.shippingPrice.formatted}</td>
-        </tr>
-        <tr>
-          <td class="sub-total">Subtotal</td>
-          <td class="sub-total">{lineItemContainer.lineItemsSubTotal.formatted}</td>
-        </tr>
-        <tr>
-          <td>Total before tax</td>
-          <td>{lineItemContainer.totalBeforeTax.formatted}</td>
-        </tr>
-        <tr>
-          <td>Taxes</td>
-          <td> {lineItemContainer.totalTax.formatted}</td>
-        </tr>
-        </tbody>
-        <tfoot>
-        <tr>
-          <td class="grand-total">grand total</td>
-          <td class="grand-total">{lineItemContainer.grandTotal.formatted}</td>
-        </tr>
-        </tfoot>
       </table>
-      <a class="cart-button-checkout" href="{checkoutUrl}">Checkout</a>
-    </div>
-  {/lineItems}
-  {/cart}
+      <div class="cart-totals">
+        <table class="cart-totals-table">
+          <tbody>
+          <tr>
+            <td class="shipping-price">Shipping price</td>
+            <td class="shipping-price">{cart.lineItemContainer.shippingPrice.formatted}</td>
+          </tr>
+          <tr>
+            <td class="sub-total">Subtotal</td>
+            <td class="sub-total">{lineItemContainer.lineItemsSubTotal.formatted}</td>
+          </tr>
+          <tr>
+            <td>Total before tax</td>
+            <td>{lineItemContainer.totalBeforeTax.formatted}</td>
+          </tr>
+          <tr>
+            <td>Taxes</td>
+            <td> {lineItemContainer.totalTax.formatted}</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td class="grand-total">grand total</td>
+            <td class="grand-total">{lineItemContainer.grandTotal.formatted}</td>
+          </tr>
+          </tfoot>
+        </table>
+        <a class="cart-button-checkout" href="{checkoutUrl}">Checkout</a>
+      </div>
+    {/lineItems}
+    {/cart}
+  </section>
 {/content}

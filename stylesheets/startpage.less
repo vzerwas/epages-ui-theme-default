@@ -1,0 +1,84 @@
+.startpage {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: space-between;
+
+  // Header content
+  &-header {
+    margin-bottom: (@base-margin * 2);
+  }
+
+  // Offer content
+  &-offer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: (@base-margin * 2);
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 31%;
+      margin-bottom: 40px;
+
+      @media (max-width: @screen-md) {
+        display: block;
+        flex-basis: 47%;
+      }
+
+      @media (max-width: @screen-sm) {
+        display: block;
+        flex-basis: 100%;
+      }
+
+      &:last-child {
+        @media (max-width: @screen-md) {
+          flex-basis: 100%;
+        }
+      }
+
+      .dali-plugin-text-content h3 {
+        margin: 0 0 (@base-margin / 2);
+      }
+
+      .dali-plugin-text-content p {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  // Feature products
+  &-feature-products {
+    margin-bottom: 30px;
+  }
+
+  // About content
+  &-about {
+    display: flex;
+    flex-direction: row;
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+
+      &-header {
+        margin: 0;
+        .dali-plugin-text-content p {
+          margin-bottom: @base-margin;
+        }
+
+        @media (max-width: @screen-md) {
+          margin: 0;
+        }
+
+        @media (max-width: @screen-sm) {
+          margin: inherit;
+        }
+      }
+    }
+  }
+}
