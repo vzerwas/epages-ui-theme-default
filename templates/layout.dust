@@ -56,7 +56,14 @@
   </footer>
   {^isEditor}
   <script type="text/javascript">
-    window.epages.suggestedSearch('.search-form-field', '.search-form-suggestions');
+    var domReady = function (callback) {
+      document.readyState === "interactive" || document.readyState === "complete"
+        ? callback()
+        : document.addEventListener("DOMContentLoaded", callback);
+    };
+    domReady(function () {
+      window.epages.suggestedSearch('.search-form-field', '.search-form-suggestions');
+    });
   </script>
   {/isEditor}
 </div>
