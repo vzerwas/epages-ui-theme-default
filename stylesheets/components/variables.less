@@ -1,15 +1,21 @@
 //
-// Colors
-@brand-primary:                     #a1152e;
+// Brand colors
+@brand-primary:                     rgb(29, 29, 29);
 @brand-secondary:                   rgb(63, 57, 57);
-@brand-text:                        rgb(29, 29, 29);
+@brand-text:                        @brand-primary;
 @brand-white:                       rgb(255, 255, 255);
 
 //
+// Navigation
+@navigation-background-item-active: rgb(234, 230, 227);
+@navigation-background-item-hover:  @navigation-background-item-active;
+@navigation-border:                 @brand-text;
+
+//
 // Font
-@font-family:                       "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-size:                         15px;
-@line-height:                       1.5;
+@font-family:                       "Karma", serif;
+@font-size:                         17px;
+@line-height:                       1.6;
 
 //
 // Dimensions
@@ -50,8 +56,8 @@
 // Font
 @font-size-base:                    @font-size;
 
-@font-size-h1:                      floor((@font-size-base * 2.4));   // ~36px
-@font-size-h2:                      floor((@font-size-base * 2));     // ~30px
+@font-size-h1:                      floor((@font-size-base * 2.9));   // ~49px
+@font-size-h2:                      floor((@font-size-base * 2.4));   // ~40px
 @font-size-h3:                      ceil((@font-size-base * 1.6));    // ~24px
 @font-size-h4:                      ceil((@font-size-base * 1.2));    // ~18px
 @font-size-h5:                      ceil((@font-size-base * 0.9));    // ~14px

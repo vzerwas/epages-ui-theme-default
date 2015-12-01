@@ -1,5 +1,5 @@
 {#navigation}
-  <nav class="main-navigation" role="navigation">
+  <nav class="navigation" role="navigation">
     <span class="show-menu">
       <label for="trigger" title="Menu">
         <span class="fa fa-bars"></span>

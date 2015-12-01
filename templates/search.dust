@@ -1,93 +1,95 @@
 {>"layout"/}
 
 {<content}
-  {?products.queryString}
-    <h1>Search results for "{products.queryString}"</h1>
-  {:else}
-    <h1>Search</h1>
-  {/products.queryString}
+  <section class="search">
+    {?products.queryString}
+      <h1>Search results for "{products.queryString}"</h1>
+    {:else}
+      <h1>Search</h1>
+    {/products.queryString}
 
-  {?products}
-  <div class="product-list-display-top">
-    <div class="product-list-sorting">
-      <span>Sort by:</span>
-      <form class="product-list-sorting-items" method="get">
-        <input type="hidden" name="query" value="{products.queryString}"/>
-        <input type="hidden" name="page" value="{products.pages.active}"/>
-        <select name="sort" size="1" onchange="this.form.submit()" {?isEditor}disabled="disabled"{/isEditor}>
-          {#products.sorts}
-            <option value="{value}" {?active}selected="selected" {/active}>{label}</option>
-          {/products.sorts}
-        </select>
-      </form>
+    {?products}
+    <div class="product-list-display-top">
+      <div class="product-list-sorting">
+        <span>Sort by:</span>
+        <form class="product-list-sorting-items" method="get">
+          <input type="hidden" name="query" value="{products.queryString}"/>
+          <input type="hidden" name="page" value="{products.pages.active}"/>
+          <select name="sort" size="1" onchange="this.form.submit()" {?isEditor}disabled="disabled"{/isEditor}>
+            {#products.sorts}
+              <option value="{value}" {?active}selected="selected" {/active}>{label}</option>
+            {/products.sorts}
+          </select>
+        </form>
+      </div>
+      <div class="product-list-pagination">
+        {#products.pages}
+          {?previous.enabled}<a href="{previous.query}"><span class="fa fa-angle-left"></span></a>{/previous.enabled}
+          {#list}
+            <a href="{query}" {?active}class="product-list-pagination-current"{/active}>{number}</a>
+          {/list}
+          {?next.enabled}<a href="{next.query}"><span class="fa fa-angle-right"></span></a>{/next.enabled}
+        {/products.pages}
+      </div>
     </div>
-    <div class="product-list-pagination">
-      {#products.pages}
-        {?previous.enabled}<a href="{previous.query}"><span class="fa fa-angle-left"></span></a>{/previous.enabled}
-        {#list}
-          <a href="{query}" {?active}class="product-list-pagination-current"{/active}>{number}</a>
-        {/list}
-        {?next.enabled}<a href="{next.query}"><span class="fa fa-angle-right"></span></a>{/next.enabled}
-      {/products.pages}
-    </div>
-  </div>
-  {/products}
+    {/products}
 
-  <div class="row">
-    <div class="col-12">
-      <div class="category-product-grid">
-      {?products}
-        <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
-        {#products}
-          <li>
-            <a href="{href}">
-              <div class="center-image-container">
-                <img class="product-image" src="{image.url}" alt="{title}" />
-              </div>
-              <h2 class="product-title">{title}</h2>
-              <h3 class="product-price">{price}</h3>
-            </a>
-          </li>
-        {/products}
-        </ul>
-      {:else}
-      <div class="search-no-result">
-        <div class="search-no-result-form">
-          <h2 class="search-no-result-form-headline">Your search did not produce any matches.</h2>
-          <form class="search-form" method="get" action="{baseUrl}/search" autocomplete="off">
-            <label class="search-form-label" for="search-label">
-              <i class="fa fa-search"></i>
-            </label>
-            <input class="search-form-field" type="text" name="query" value="{products.queryString}" placeholder="Search for" />
-            <input type="hidden" name="page" value="1"/>
-            <input type="hidden" name="sort" value="{products.activeSort}"/>
-            <div id="suggested-result" class="search-form-suggestions"></div>
-          </form>
-        </div>
-        <div class="search-no-result-hint">
-          <h3>These tips may help:</h3>
-          <ul>
-            <li>Check your search terms for spelling errors.</li>
-            <li>Describe what you are looking for using different words.</li>
-            <li>Try to use more general search terms.</li>
+    <div class="row">
+      <div class="col-12">
+        <div class="category-product-grid">
+        {?products}
+          <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+          {#products}
+            <li>
+              <a href="{href}">
+                <div class="center-image-container">
+                  <img class="product-image" src="{image.url}" alt="{title}" />
+                </div>
+                <h2 class="product-title">{title}</h2>
+                <h3 class="product-price">{price}</h3>
+              </a>
+            </li>
+          {/products}
           </ul>
-          <p>If you still cannot find what you are looking for, do not hesitate to contact us.</p>
+        {:else}
+        <div class="search-no-result">
+          <div class="search-no-result-form">
+            <h2 class="search-no-result-form-headline">Your search did not produce any matches.</h2>
+            <form class="search-form" method="get" action="{baseUrl}/search" autocomplete="off">
+              <label class="search-form-label" for="search-label">
+                <i class="fa fa-search"></i>
+              </label>
+              <input class="search-form-field" type="text" name="query" value="{products.queryString}" placeholder="Search for" />
+              <input type="hidden" name="page" value="1"/>
+              <input type="hidden" name="sort" value="{products.activeSort}"/>
+              <div id="suggested-result" class="search-form-suggestions"></div>
+            </form>
+          </div>
+          <div class="search-no-result-hint">
+            <h3>These tips may help:</h3>
+            <ul>
+              <li>Check your search terms for spelling errors.</li>
+              <li>Describe what you are looking for using different words.</li>
+              <li>Try to use more general search terms.</li>
+            </ul>
+            <p>If you still cannot find what you are looking for, do not hesitate to contact us.</p>
+          </div>
+        </div>
+        {/products}
         </div>
       </div>
-      {/products}
+    </div>
+
+    <div class="product-list-display-bottom">
+      <div class="product-list-pagination">
+        {#products.pages}
+          {?previous.enabled}<a href="{previous.query}"><span class="fa fa-angle-left"></span></a>{/previous.enabled}
+          {#list}
+            <a href="{query}" {?active}class="product-list-pagination-current"{/active}>{number}</a>
+          {/list}
+          {?next.enabled}<a href="{next.query}"><span class="fa fa-angle-right"></span></a>{/next.enabled}
+        {/products.pages}
       </div>
     </div>
-  </div>
-
-  <div class="product-list-display-bottom">
-    <div class="product-list-pagination">
-      {#products.pages}
-        {?previous.enabled}<a href="{previous.query}"><span class="fa fa-angle-left"></span></a>{/previous.enabled}
-        {#list}
-          <a href="{query}" {?active}class="product-list-pagination-current"{/active}>{number}</a>
-        {/list}
-        {?next.enabled}<a href="{next.query}"><span class="fa fa-angle-right"></span></a>{/next.enabled}
-      {/products.pages}
-    </div>
-  </div>
+  </section>
 {/content}
