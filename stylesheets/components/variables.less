@@ -1,0 +1,105 @@
+//
+// Colors
+@brand-primary:                     #a1152e;
+@brand-secondary:                   rgb(63, 57, 57);
+@brand-text:                        rgb(29, 29, 29);
+@brand-white:                       rgb(255, 255, 255);
+
+//
+// Font
+@font-family:                       "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-size:                         15px;
+@line-height:                       1.5;
+
+//
+// Dimensions
+@base-padding:                      10px;
+@base-margin:                       20px;
+
+//
+// Z-index stack
+@minicart-zindex:                   10;
+@search-zindex:                     20;
+@navi-zindex:                       30;
+
+//
+// Buttons style
+@button-border-radius:              20px;
+@button-font-size:                  @font-size;
+
+// Default button
+@button-text-color-default:         @brand-white;
+@button-background-color-default:   @brand-secondary;
+
+// Primary button
+@button-text-color-primary:         @brand-white;
+@button-background-color-primary:   @brand-primary;
+
+
+//
+// Body
+@body-bg:                           @brand-white;
+@global-text-color:                 @brand-text;
+@global-link-color:                 @brand-primary;
+@global-link-hover-color:           darken(@brand-primary, 10%);
+
+
+//
+// Typography
+
+// Font
+@font-size-base:                    @font-size;
+
+@font-size-h1:                      floor((@font-size-base * 2.4));   // ~36px
+@font-size-h2:                      floor((@font-size-base * 2));     // ~30px
+@font-size-h3:                      ceil((@font-size-base * 1.6));    // ~24px
+@font-size-h4:                      ceil((@font-size-base * 1.2));    // ~18px
+@font-size-h5:                      ceil((@font-size-base * 0.9));    // ~14px
+@font-size-h6:                      ceil((@font-size-base * 0.8));    // ~12px
+
+// Heading
+@headings-font-family:              inherit;
+@headings-font-weight:              500;
+@headings-line-height:              1.1;
+@headings-color:                    inherit;
+
+// Blockquote
+@blockquote-font-size:              (@font-size-base * 1.25);
+@blockquote-border-color:           lighten(@brand-secondary, 60%);
+
+// Horizontal line
+@hr-border:                         lighten(@brand-secondary, 50%);
+
+
+//
+// Media queries breakpoints
+
+/* Todo: refactoring */
+@max-width:                         @screen-lg;
+@min-width:                         320px;
+
+// Devices
+@screen-xs:                         480px;    // Phone
+@screen-sm:                         768px;    // Tablet
+@screen-md:                         992px;    // Desktop
+@screen-lg:                         1280px;   // Wide desktop
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:                     (@screen-sm - 1);
+@screen-sm-max:                     (@screen-md - 1);
+@screen-md-max:                     (@screen-lg - 1);
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:         30px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint:     @screen-sm;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);

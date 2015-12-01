@@ -1,0 +1,5 @@
+{>"layout"/}
+
+{<content}
+  {@plugin type="epages.text" id="legal-content"/}
+{/content}

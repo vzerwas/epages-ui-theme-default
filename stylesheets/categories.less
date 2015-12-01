@@ -1,3 +1,43 @@
+.category-product-grid {
+  margin-bottom: 2em;
+}
+
+// Wrapper for filter and pagination
+.product-list-display-top {
+  margin: 40px 0 20px;
+  .clearfix();
+}
+
+// Pagination
+.product-list-pagination {
+  display: inline-block;
+  float: right;
+
+  & a {
+    padding: 5px;
+    color: lighten(@brand-text, 45%);
+
+    &:hover {
+      color: @brand-text;
+    }
+
+    &.product-list-pagination-current {
+      color: @brand-text;
+      font-weight: bold;
+    }
+  }
+}
+
+.product-list-sorting {
+  float: left;
+  display: inline-block;
+
+  &-items {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
 .list-category {
   font-size: .6em;
 
@@ -47,3 +87,10 @@
     }
   }
 }
+
+// Wrapper for pagination
+.product-list-display-bottom {
+  margin-top: 20px;
+}
+
+

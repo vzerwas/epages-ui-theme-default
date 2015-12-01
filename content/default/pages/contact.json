@@ -1,0 +1,55 @@
+{
+  "slug": "contact",
+  "type": "blank",
+  "title": "Contact",
+  "elements": [],
+  "grid": {
+    "rows": [
+      {
+        "columns": [
+          {
+            "elements": [
+              {
+                "type": "epages.text",
+                "data": {
+                  "content": "<h1>Contact and location</h1><p>This is an example of a Contact and location page. Feel free to add your desired content.</p><h3>You will find us here:</h3><p>4 Moore St</p><p>New York</p>"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "columns": [
+          {
+            "elements": [
+              {
+                "type": "epages.image",
+                "data": {
+                  "src": "{images.store}",
+                  "alt": "",
+                  "link": "",
+                  "opentab": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "columns": [
+          {
+            "elements": [
+              {
+                "type": "epages.text",
+                "data": {
+                  "content": "<h3>Get in touch with us:</h3><p>E-Mail: info@spotlight.com</p><p>Phone:&nbsp;+44(0)20 7788 1001</p>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

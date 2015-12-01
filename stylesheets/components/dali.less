@@ -1,0 +1,68 @@
+//
+// Typography
+.dali-plugin-text-content h2 {
+
+}
+
+.dali-plugin-text-content p {
+}
+
+.dali-plugin-text-content ul {
+
+}
+
+.dali-plugin-text-content blockquote {
+
+}
+
+.dali-plugin-image {
+}
+
+//
+// Dali: responsive behavior
+.dali-grid:not(.dali-grid-editview) .dali-grid-row > * {
+
+  @media (max-width: @screen-md) {
+    margin: 0;
+  }
+}
+
+// Row
+.dali-grid:not(.dali-grid-editview) .dali-grid-row {
+  flex-wrap: wrap;
+}
+
+// Column
+.dali-grid:not(.dali-grid-editview) .dali-grid-column {
+  flex: 1 0 0;
+  @media (max-width: @screen-md) {
+    display: block;
+    flex: 1 0 47%;
+  }
+
+  @media (max-width: @screen-sm) {
+    display: block;
+    flex: 1 0 100%;
+  }
+
+  &:nth-child(1) {
+    @media (max-width: @screen-md) {
+      margin-right: @base-margin * 1.5;
+    }
+
+    @media (max-width: @screen-sm) {
+      margin-right: 0;
+    }
+
+  }
+
+  &:nth-child(4) {
+    @media (max-width: @screen-md) {
+      margin-left: @base-margin * 1.5;
+    }
+
+    @media (max-width: @screen-sm) {
+      margin-left: 0;
+    }
+  }
+}

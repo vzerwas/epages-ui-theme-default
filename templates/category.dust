@@ -26,67 +26,59 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <div class="hero-image">
-        {@plugin type="epages.image" id="category-hero-image"/}
-      </div>
-    </div>
+
+  <div class="hero-image">
+    {@plugin type="epages.image" id="category-hero-image"/}
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <div class="category-product-grid">
-      {?products}
-        <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
-        {#products}
-          <li>
-            <a href="{href}">
-              <div class="center-image-container">
-                <img class="product-image" src="{image.url}" alt="{title}" />
-              </div>
-              <h2 class="product-title">{title}</h2>
-              <h3 class="product-price">{price}</h3>
-              <div class="product-availability">
-                <span class="product-availability-icon {stockLevelClass}-stock-icon"></span>
-                <p class="product-availability-text">{availabilityText}</p>
-              </div>
-            </a>
-          </li>
-        {/products}
-        </ul>
-      {:else}
-        <h3 class="text-center">
-          <span class="fa fa-ban fa-5x"></span>
-          <br/>No Products available
-        </h3>
-      {/products}
-      </div>
-    </div>
+
+
+  <div class="category-product-grid">
+  {?products}
+    <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+    {#products}
+      <li>
+        <a href="{href}">
+          <div class="center-image-container">
+            <img class="product-image" src="{image.url}" alt="{title}" />
+          </div>
+          <h2 class="product-title">{title}</h2>
+          <h3 class="product-price">{price}</h3>
+          <div class="product-availability">
+            <span class="product-availability-icon {stockLevelClass}-stock-icon"></span>
+            <p class="product-availability-text">{availabilityText}</p>
+          </div>
+        </a>
+      </li>
+    {/products}
+    </ul>
+  {:else}
+    <h3 class="text-center">
+      <span class="fa fa-ban fa-5x"></span>
+      <br/>No Products available
+    </h3>
+  {/products}
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      {?category.subCategories}
-      <h4>Further categories</h4>
-      <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
-        {#category.subCategories}
-        <li>
-          <a href="{href}">
-            <h3>{name}</h3>
-          </a>
-        </li>
-        {/category.subCategories}
-      </ul>
-      {/category.subCategories}
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-12">
-      {@plugin type="epages.text" id="category-description"/}
-    </div>
-  </div>
+
+  {?category.subCategories}
+  <h4>Further categories</h4>
+  <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+    {#category.subCategories}
+    <li>
+      <a href="{href}">
+        <h3>{name}</h3>
+      </a>
+    </li>
+    {/category.subCategories}
+  </ul>
+  {/category.subCategories}
+
+
+
+  {@plugin type="epages.text" id="category-description"/}
+
 
   <div class="product-list-display-bottom">
     <div class="product-list-pagination">

@@ -1,22 +1,22 @@
 //
 // Shopping cart colors
-@cart-table-head-background-color: lighten(@alto-theme-brand-secondary, 60%);
+@cart-table-head-background-color: lighten(@brand-secondary, 60%);
 @cart-background-color: @cart-table-head-background-color;
-@cart-table-border-color: lighten(@alto-theme-brand-secondary, 60%);
-@cart-table-image-border-color: lighten(@alto-theme-brand-secondary, 65%);
-@cart-table-separator-border-color: lighten(@alto-theme-brand-secondary, 65%);
+@cart-table-border-color: lighten(@brand-secondary, 60%);
+@cart-table-image-border-color: lighten(@brand-secondary, 65%);
+@cart-table-separator-border-color: lighten(@brand-secondary, 65%);
 
 //
 // Shopping cart empty page
 .cart-empty-note {
   width: 100%;
-  padding: @alto-theme-padding * 3;
+  padding: @base-padding * 3;
   margin-top: 80px;
   background-color: @cart-background-color;
   text-align: center;
 
   &-text {
-    padding: @alto-theme-padding;
+    padding: @base-padding;
   }
 }
 //
@@ -28,7 +28,7 @@
   text-align: left;
 
   th {
-    padding: @alto-theme-padding;
+    padding: @base-padding;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 11px;
@@ -36,15 +36,15 @@
 
   tr {
     border-bottom: 1px solid @cart-table-border-color;
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       display: inline-block;
-      padding: (@alto-theme-padding * 2) 0;
+      padding: (@base-padding * 2) 0;
       width: 100%;
     }
   }
 
   td {
-    padding: 20px @alto-theme-padding;
+    padding: 20px @base-padding;
     font-weight: 300;
   }
 
@@ -52,23 +52,23 @@
   // Shopping cart table item
 
   &-item-image {
-    padding: @alto-theme-padding;
+    padding: @base-padding;
     border: 1px solid @cart-table-image-border-color;
 
-    @media (max-width: @screen-xs-min) {
-      padding: @alto-theme-padding;
+    @media (max-width: @screen-xs) {
+      padding: @base-padding;
     }
   }
 
   &-item-product {
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       float: left;
       width: auto;
     }
   }
 
   &-item-description {
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       float: left;
       width: 68%;
     }
@@ -82,7 +82,7 @@
   }
 
   &-item-price {
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       float: left;
       width: 33.3333%;
       clear: both;
@@ -92,7 +92,7 @@
   }
 
   &-item-quantity {
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       float: left;
       width: 33.3333%;
       border-top: 1px dashed @cart-table-separator-border-color;
@@ -100,11 +100,11 @@
     }
 
     &-input {
-      .alto-theme-input-field-styling;
+      .input-field-styling;
       font-size: inherit;
       font-weight: 400;
       max-width: 70px;
-      @media (max-width: @screen-sm-min) {
+      @media (max-width: @screen-sm) {
         padding-top: 0;
         padding-bottom: 0;
         margin-top: 2px;
@@ -114,7 +114,7 @@
 
   &-item-total {
     text-align: right;
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       float: left;
       width: 33.3333%;
       border-top: 1px dashed @cart-table-separator-border-color;
@@ -123,7 +123,7 @@
   }
 
   &-item-delete {
-    @media (max-width: @screen-sm-min) {
+    @media (max-width: @screen-sm) {
       display: none;
       float: left;
       width: 100%;
@@ -147,7 +147,7 @@
 // Shopping cart table head
 .cart-table-head {
   background-color: @cart-table-head-background-color;
-  @media (max-width: @screen-sm-min) {
+  @media (max-width: @screen-sm) {
     display: none;
   }
 
@@ -181,7 +181,7 @@
 // Shopping cart subhead for mobile view
 .subhead-hidden {
   display: none;
-  @media (max-width: @screen-sm-min) {
+  @media (max-width: @screen-sm) {
     display: block;
     text-transform: uppercase;
     font-weight: 500;
@@ -193,7 +193,7 @@
 // Shopping cart item for mobile view
 .item-hidden {
   display: none;
-  @media (max-width: @screen-sm-min) {
+  @media (max-width: @screen-sm) {
     display: block;
   }
 }
@@ -202,13 +202,13 @@
 // Shopping cart total list
 .cart-totals {
   float: right;
-  font-size: @alto-theme-font-size;
+  font-size: @font-size;
 }
 
 .cart-totals-table {
 
   td {
-    padding: @alto-theme-padding / 2;
+    padding: @base-padding / 2;
   }
 
   td {
@@ -231,8 +231,8 @@
 //
 // Shopping cart checkout button
 .cart-button-checkout {
-  .alto-theme-button;
-  .alto-theme-button-primary;
+  .button;
+  .button-primary;
   display: inline-block;
   float: right;
   margin-top: 20px;

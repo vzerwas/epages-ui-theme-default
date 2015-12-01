@@ -1,8 +1,8 @@
-@minicart-container-box-shadow-color: lighten(@alto-theme-brand-secondary, 60%);
-@minicart-container-border-color: lighten(@alto-theme-brand-secondary, 60%);
-@minicart-container-triangle-color: @alto-theme-brand-white;
+@minicart-container-box-shadow-color: lighten(@brand-secondary, 60%);
+@minicart-container-border-color: lighten(@brand-secondary, 60%);
+@minicart-container-triangle-color: @brand-white;
 @minicart-badge-background-color: rgb(121, 178, 11);
-@minicart-badge-text-color: @alto-theme-brand-white;
+@minicart-badge-text-color: @brand-white;
 
 //
 // Arrow box
@@ -26,9 +26,9 @@
 .container-fluid {
   position: relative; // Paint trigger
   margin: 0 auto;
-  padding: 0 (@alto-theme-padding * 2);
-  max-width: @alto-theme-max-width;
-  min-width: @alto-theme-min-width;
+  padding: 0 (@base-padding * 2);
+  max-width: @max-width;
+  min-width: @min-width;
 }
 
 .hero-image {
@@ -46,7 +46,7 @@
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: @screen-sm-min) {
+  @media (max-width: @screen-sm) {
     flex-flow: row wrap;
   }
 
@@ -65,7 +65,7 @@
 
     @media (max-width: 567px) {
       order: 3;
-      margin-top: @alto-theme-margin * 2;
+      margin-top: @base-margin * 2;
     }
   }
 
@@ -80,12 +80,11 @@
       text-align: right;
     }
 
-    // Todo: use this after delete product feature is merged into develop
-    /*&-icon {
+    &-icon {
       .fa;
       .fa-2x;
       &::before {content: @fa-var-shopping-cart;}
-    }*/
+    }
 
     &-checkout {
       display: inline-block;
@@ -123,14 +122,14 @@
 // Mini cart box which is visible on hover
 .minicart-container {
   display: none;
-  padding: @alto-theme-padding * 2;
-  margin: @alto-theme-margin 0;
+  padding: @base-padding * 2;
+  margin: @base-margin 0;
   position: absolute;
   float: right;
   z-index: 1;
   width: 300px;
   border-radius: 3px;
-  background-color: @alto-theme-brand-white;
+  background-color: @brand-white;
   box-shadow: 0 0 6px @minicart-container-box-shadow-color;
   right: 0;
   top: 50px;
@@ -144,12 +143,12 @@
 //
 // Mini cart product items in mini cart box
 .minicart-list {
-  .simple-list;
+  .list-unstyled;
 
   &-item {
     display: table;
     width: 100%;
-    padding: @alto-theme-padding 0;
+    padding: @base-padding 0;
     border-bottom: 1px solid @minicart-container-border-color;
     text-align: left;
 
@@ -160,7 +159,7 @@
     &-product {
       display: table-cell;
       width: 86%;
-      padding-left: @alto-theme-padding / 2;
+      padding-left: @base-padding / 2;
       vertical-align: top;
 
       &-name {
@@ -185,10 +184,8 @@
   position: relative;
 
   ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: @alto-theme-brand-primary;
+    .list-unstyled;
+    background-color: @brand-primary;
 
     @media (max-width: @screen-sm-max) {
       display: none;
@@ -198,7 +195,7 @@
       display: block;
       position: relative;
       float: left;
-      background-color: @alto-theme-brand-primary;
+      background-color: @brand-primary;
 
       a {
         display: block;
@@ -206,7 +203,7 @@
         text-decoration: none;
         white-space: nowrap;
         font-weight: 300;
-        color: @alto-theme-brand-white;
+        color: @brand-white;
 
         @media (max-width: @screen-sm-max) {
           display: inline-block;
@@ -215,7 +212,7 @@
         }
 
         &:hover {
-          background-color: darken(@alto-theme-brand-primary, 5%);
+          background-color: darken(@brand-primary, 5%);
         }
       }
 
@@ -228,7 +225,7 @@
       &:hover > ul {
         display: block;
         position: absolute;
-        z-index: @alto-theme-navi-zindex;
+        z-index: @navi-zindex;
 
         @media (max-width: @screen-sm-max) {
           display: none;
@@ -239,10 +236,10 @@
         float: none;
 
         a {
-          background-color: lighten(@alto-theme-brand-secondary, 30%);
+          background-color: lighten(@brand-secondary, 30%);
 
           &:hover {
-            background-color: lighten(@alto-theme-brand-secondary, 25%);
+            background-color: lighten(@brand-secondary, 25%);
           }
         }
       }
@@ -268,7 +265,7 @@
 
   // Shows active navigation item
   &-active {
-    background-color: darken(@alto-theme-brand-primary, 5%);
+    background-color: darken(@brand-primary, 5%);
   }
 }
 
@@ -284,17 +281,17 @@
   }
 
   @media (max-width: 567px) {
-    top: -10em;
+    top: -9em;
   }
 
   label {
     display: block;
     margin-top: -.5em;
-    color: @alto-theme-brand-primary;
+    color: @brand-primary;
 
     &:hover {
       cursor: pointer;
-      color: darken(@alto-theme-brand-primary, 10%);
+      color: darken(@brand-primary, 10%);
     }
   }
 }
@@ -306,12 +303,12 @@
     + ul {
       display: block;
       position: absolute;
-      z-index: @alto-theme-navi-zindex;
+      z-index: @navi-zindex;
       padding: 1em;
       width: 100%;
       overflow: auto;
 
-      @media (min-width: @screen-tablet){
+      @media (min-width: @screen-sm){
         padding: 0;
         -webkit-column-count: 2;
         -moz-column-count: 2;
@@ -344,14 +341,4 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
   border: 0;
-}
-
-// Overwrites the bootstrap styling Todo: Create own styling
-.breadcrumb {
-  background-color: transparent;
-  margin-top: 20px;
-  padding-left: 0;
-  font-size: 13px;
-  font-weight: 300;
-  color: lighten(@alto-theme-brand-text, 60%);
 }

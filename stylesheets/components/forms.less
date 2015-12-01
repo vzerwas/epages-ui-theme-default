@@ -1,0 +1,72 @@
+//
+// Form colors
+@input-font-color:         @brand-text;
+@input-font-size:          @font-size;
+@input-background-color:   @brand-white;
+@input-border-color:       lighten(@brand-secondary, 50%);
+@input-border-color-focus: @brand-secondary;
+@input-border-color-hover: @brand-secondary;
+
+//
+// Placeholder colors
+@input-placeholder-color:  lighten(@brand-secondary, 30%);
+
+
+// ---------- Styling ---------- //
+
+input::placeholder {
+  color: @input-placeholder-color;
+}
+
+//
+// Input
+.input-field-styling {
+  padding: (@base-padding / 2);
+  width: 100%;
+  resize: none;
+  border: 1px solid @input-border-color;
+  box-shadow: none;
+  min-height: 2em;
+  line-height: 1.5;
+  background-color: @input-background-color;
+  color: @input-font-color;
+  font-size: @input-font-size;
+  font-weight: 400;
+
+  &:focus {
+    border-color: lighten(@input-border-color-focus, 50%);
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:hover {
+    border-color: lighten(@input-border-color-hover, 50%);
+  }
+}
+
+//
+//Search input field
+
+.search-form {
+  position: relative;
+
+  &-label {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+
+    & i {
+      position: relative;
+      left: 10px;
+      color: darken(@input-border-color, 30%);
+    }
+  }
+
+  &-field {
+    .input-field-styling;
+
+    padding: 5px 10px 5px 30px;
+    border-radius: 20px;
+    font-weight: 300;
+  }
+}
