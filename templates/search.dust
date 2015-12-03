@@ -46,15 +46,17 @@
         </ul>
       </div>
 
+      {#products.pages}
+      {?list[1]}
       <div class="pagination">
-        {#products.pages}
           {?previous.enabled}<a href="{previous.query}"><span class="pagination-icon-previous"></span></a>{/previous.enabled}
           {#list}
             <a href="{query}" {?active}class="pagination-current"{/active}>{number}</a>
           {/list}
           {?next.enabled}<a href="{next.query}"><span class="pagination-icon-next"></span></a>{/next.enabled}
-        {/products.pages}
       </div>
+      {/list[1]}
+      {/products.pages}
     </div>
     {/products}
 
@@ -101,15 +103,17 @@
     </section>
 
     <div class="toolbar-bottom">
+      {#products.pages}
+      {?list[1]}
       <div class="pagination">
-        {#products.pages}
           {?previous.enabled}<a href="{previous.query}"><span class="pagination-icon-previous"></span></a>{/previous.enabled}
           {#list}
             <a href="{query}" {?active}class="pagination-current"{/active}>{number}</a>
           {/list}
           {?next.enabled}<a href="{next.query}"><span class="pagination-icon-next"></span></a>{/next.enabled}
-        {/products.pages}
       </div>
+      {/list[1]}
+      {/products.pages}
     </div>
   </section>
 
