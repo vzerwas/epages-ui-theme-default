@@ -1,0 +1,27 @@
+//
+// Toolbar colors and distance
+@toolbar-background-color: @footer-background-color;
+
+
+//
+// Toolbar
+
+// Mixin for wrapper
+.toolbar-area {
+  margin: 0 0 2em 0;
+  padding: @base-padding (@base-padding * 1.5);
+  .clearfix();
+}
+
+// Wrapper
+.toolbar {
+
+  &-top {
+    .toolbar-area;
+    background-color: @toolbar-background-color;
+  }
+
+  &-bottom {
+    .toolbar-area;
+  }
+}

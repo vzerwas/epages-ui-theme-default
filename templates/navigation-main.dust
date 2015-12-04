@@ -6,7 +6,7 @@
       </label>
     </span>
     <input type="checkbox" id="trigger" class="trigger visually-hidden"/>
-    <ul>
+    <ul class="menu-mobile">
       {#pages}
         {>"components/nested-page-list"/}
       {/pages}
