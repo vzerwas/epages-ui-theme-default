@@ -3,9 +3,9 @@
     "pages": [
       "content/default/pages/startpage.json",
       "content/default/pages/aboutme.json",
-      "content/default/pages/contact.json",
-      "content/default/pages/category.json"
+      "content/default/pages/contact.json"
     ],
+    "categories": "content/default/categories.json",
     "images": {
       "cat1": "content/default/images/category-teaser-image-1.jpg",
       "cat2": "content/default/images/category-teaser-image-2.jpg",
@@ -18,7 +18,7 @@
       "prod-man": "content/default/images/home-product-teaser-man.jpg",
       "prod-scarves": "content/default/images/home-product-teaser-scarves.jpg",
       "about": "content/default/images/home-about-us.jpg",
-      "category": "content/default/images/categories.jpg"
+      "category-hero": "content/default/images/category-hero.jpg"
     }
   }
 }

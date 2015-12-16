@@ -7,7 +7,7 @@
       "id": "category",
       "type": "epages.image",
       "data": {
-        "src": "{images.category}",
+        "src": "{images.category-hero}",
         "alt": "",
         "link": "",
         "opentab": false
