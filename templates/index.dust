@@ -1,27 +1,27 @@
 {>"layout"/}
 
 {<content}
-  <section class="startpage">
-    <header class="startpage-header">
+  <section class="home">
+    <header class="home-header">
       {@plugin type="epages.image" id="header-image-start"/}
     </header>
 
-    <section class="startpage-offer">
-      <article class="startpage-offer-column">
+    <section class="home-offer">
+      <article class="home-offer-column">
         <header>
           {@plugin type="epages.text" id="article-text-1"/}
         </header>
         {@plugin type="epages.image" id="article-image-1"/}
       </article>
 
-      <article class="startpage-offer-column">
+      <article class="home-offer-column">
         <header>
           {@plugin type="epages.text" id="article-text-2"/}
         </header>
         {@plugin type="epages.image" id="article-image-2"/}
       </article>
 
-      <article class="startpage-offer-column">
+      <article class="home-offer-column">
         <header>
           {@plugin type="epages.text" id="article-text-3"/}
         </header>
@@ -29,8 +29,8 @@
       </article>
     </section>
 
-    <section class="startpage-feature-products">
-      <ul class="list-category list-unstyled list-grid-2 list-grid-medium-3 list-grid-large-4">
+    <section class="home-feature-products">
+      <ul class="category-product-list column-grid-2 column-grid-3 column-grid-4">
       {#products}
         <li>
           <a href="{href}">
@@ -45,9 +45,9 @@
       </ul>
     </section>
 
-    <section class="startpage-about">
-      <article class="startpage-about-column">
-        <header class="startpage-about-column-header">
+    <section class="home-about">
+      <article class="home-about-column">
+        <header class="home-about-column-header">
           {@plugin type="epages.text" id="article-text-4"/}
         </header>
         {@plugin type="epages.image" id="article-image-4"/}

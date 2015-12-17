@@ -297,6 +297,10 @@
   }
 }
 
+.menu-mobile {
+  background-color: white;
+}
+
 // Displays navigation for mobile view
 .trigger {
   &:checked {
@@ -352,11 +356,12 @@
 .footer {
   display: flex;
   flex-flow: row;
-  background-color: lighten(@brand-secondary, 70%);
+  background-color: @footer-background-color;
   padding: 20px;
   height: 100px;
   justify-content: center;
   align-items: center;
+  clear: both;
 
   &-list {
     .list-unstyled;
