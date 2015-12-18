@@ -4,6 +4,7 @@
 @brand-secondary:                   rgb(63, 57, 57);
 @brand-text:                        @brand-primary;
 @brand-white:                       rgb(255, 255, 255);
+@brand-blue:                        rgb(85, 149, 189);
 
 //
 // Font
@@ -30,7 +31,7 @@
 
 //
 // Buttons style
-@button-border-radius:              20px;
+@button-border-radius:              50px;
 @button-font-size:                  @font-size;
 
 // Default button
@@ -39,7 +40,7 @@
 
 // Primary button
 @button-text-color-primary:         @brand-white;
-@button-background-color-primary:   @brand-primary;
+@button-background-color-primary:   lighten(@brand-primary, 10%);
 
 
 //
@@ -47,7 +48,7 @@
 @body-bg:                           @brand-white;
 @global-text-color:                 @brand-text;
 @global-link-color:                 @brand-primary;
-@global-link-hover-color:           rgb(85, 149, 189);
+@global-link-hover-color:           darken(@brand-blue, 5%);
 @footer-background-color:           @navigation-background-item-active;
 
 
@@ -91,6 +92,7 @@
 @screen-lg:                         1280px;   // Wide desktop
 
 // So media queries don't overlap when required, provide a maximum
+@screen-min:                        (@screen-xs - 1);     // 479
 @screen-xs-min:                     (@screen-sm - 1);     // 767
 @screen-xs-max:                     (@screen-sm + 1);     // 769
 @screen-sm-max:                     (@screen-md - 1);
