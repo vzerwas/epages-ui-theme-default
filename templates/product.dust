@@ -2,57 +2,57 @@
 
 {<content}
 <section class="product">
-  <div class="product-detail-page">
-    <div>
-      {#product.slideshow}
-        <input type="checkbox" id="product-image-gallery-lb-toggle"/>{!lightbox toggle - experimental!}
-        <div class="product-image-gallery">
-          {#images}
-            <input type="radio" name="product-image-slide-switch" id="product-image-slide-switch-{$idx}"
-                   {?isFirst}checked="checked"{/isFirst}/>
-            <label for="product-image-slide-switch-{$idx}">
-              <picture class="product-image-gallery-thumbnail">
-                <source media="(min-width: 1024px)" srcset="{url}&width=1000&height=1000">
-                <source media="(min-width: 680px)" srcset="{url}&width=500&height=500">
-                <source srcset="{url}&width=200&height=200">
-                <img src="{url}&width=1000&height=1000" alt="{product.title}">
-              </picture>
-            </label>
-            <div class="product-image-gallery-stage">
-              <picture class="product-image-gallery-image">
-                <source media="(min-width: 1024px)" srcset="{url}&width=1000&height=1000">
-                <source media="(min-width: 680px)" srcset="{url}&width=500&height=500">
-                <source srcset="{url}&width=200&height=200">
-                <img src="{url}&width=1000&height=1000" alt="{product.title}">
-              </picture>
-            </div>
-          {/images}
-          <label for="product-image-gallery-lb-toggle"></label>
-        </div>
+  <div class="product-image">
+    {#product.slideshow}
+      <div class="product-image-gallery">
+        {#images}
+          <input type="radio" name="product-image-slide-switch" id="product-image-slide-switch-{$idx}"
+          {?isFirst}checked="checked"{/isFirst}/>
+          <label for="product-image-slide-switch-{$idx}">
+            {>"responsive-image" src="{url}" alt="{product.title}" /}
+          </label>
+          <div class="product-image-gallery-stage">
+            {>"responsive-image" src="{url}" alt="{product.title}" /}
+          </div>
+        {/images}
+        <label for="product-image-gallery-lb-toggle"></label>
+      </div>
+      {:error}{!:error, not {:else} since this is a promise!}
+      {>"responsive-image" src="{product.image.url}" alt="{product.title}" /}
+    {/product.slideshow}
+  </div>
 
-        {:error}{!:error, not {:else} since this is a promise!}
-        <img class="product-detail-page-image" src="{product.image.url}" alt="{product.title}" />
-      {/product.slideshow}
+  <div class="product-info">
+    <h1 class="product-info-title">{product.title}</h1>
+    <div class="product-info-box">
+      {?product.manufacturerPrice}
+      <h3 class="product-info-box-price-old">{product.manufacturerPrice}</h3>
+      {/product.manufacturerPrice}
+      <h3 class="product-info-box-price-new">{product.price}
+        {?product.energyLabel}
+        <span class="product-info-box-energy-label">{product.energyLabel}</span>
+        {/product.energyLabel}
+      </h3>
+      <div class="product-info-box-vat-note">Price incl. VAT</div>
     </div>
 
-    <div>
-      <h1 class="product-title">{product.title}</h1>
-      <h3 class="product-price">{product.price}</h3>
-      <div class="product-availability">
-        <span class="product-availability-icon {product.stockLevelClass}-stock-icon"></span>
-        <p class="product-availability-text">{product.availabilityText}</p>
+    {#cart.button}
+      <label class="product-info-quantity-label">Quantity:
+        <input class="product-info-quantity-label-input-field" type="number" name="quantity" id="quantity" value="1" min="1" />
+      </label>
+      <div class="product-details-availability">
+        <span class="product-details-availability-icon {product.stockLevelClass}-stock-icon"></span>
+        <span class="product-details-availability-info">{product.availabilityText|s}</span>
       </div>
-
-      {#cart.button}
-        <label class="product-quantity-label">Quantity: <input class="product-quantity-input-field" type="number" name="quantity" id="quantity" value="1" min="1" /></label>
-        <button class="product-add-cart-button" type="submit"{^product.available} disabled="disabled"{/product.available}>
-          <span class="product-add-cart-button-icon"></span>Add to basket
-        </button>
-      {/cart.button}
-      <div class="product-description">
-        {product.description|s}
-      </div>
+      <button class="product-add-cart-button" type="submit"{^product.available} disabled="disabled"{/product.available}>
+        <span class="product-add-cart-button-icon"></span>Add to basket
+      </button>
+    {/cart.button}
+    <div class="product-description">
+      <p class="product-description-headline">Description</p>
+      {product.description|s}
     </div>
   </div>
+
 </section>
 {/content}
