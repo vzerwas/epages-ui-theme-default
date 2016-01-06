@@ -9,7 +9,7 @@
 // Font
 @font-family:                       "Karma", serif;
 @font-size:                         17px;
-@line-height:                       1.6;
+@line-height:                       1.5;
 
 //
 // Dimensions
@@ -56,9 +56,9 @@
 
 // Font
 @font-size-base:                    @font-size;
-@font-size-h1:                      floor((@font-size-base * 2.5));   // ~42px
-@font-size-h2:                      floor((@font-size-base * 1.9));   // ~32px
-@font-size-h3:                      ceil((@font-size-base * 1.4));    // ~24px
+@font-size-h1:                      floor((@font-size-base * 2.2));   // ~42px
+@font-size-h2:                      floor((@font-size-base * 1.7));   // ~32px
+@font-size-h3:                      ceil((@font-size-base * 1.2));    // ~24px
 @font-size-h4:                      ceil((@font-size-base * 1.2));    // ~18px
 @font-size-h5:                      ceil((@font-size-base * 0.9));    // ~14px
 @font-size-h6:                      ceil((@font-size-base * 0.8));    // ~12px
@@ -96,6 +96,19 @@
 @screen-sm-max:                     (@screen-md - 1);
 @screen-md-max:                     (@screen-lg - 1);
 
+
+//
+// DALI: Spacing
+@dali-grid-spacing-elements: 50px / 2;
+@dali-grid-spacing-rows: 60px;
+@dali-grid-spacing-columns: 40px;
+
+
+//
+// DALI: Media queries breakpoints
+@dali-responsive-break-all: @screen-sm;
+@dali-responsive-break-three: @screen-md;
+@dali-responsive-break-four: @screen-lg;
 
 //== Grid system
 //

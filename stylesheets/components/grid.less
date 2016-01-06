@@ -6,3 +6,109 @@
   min-width: 320px;
   .clearfix;
 }
+
+
+//
+// Responsive behavior in dali canvas for storefront
+
+// Mixins for vertical and horizontal margins
+.space-between-children-vertical(@space) {
+  &>* { margin: @space 0; }
+  &>:first-child { margin-top: 0; }
+  &>:last-child { margin-bottom: 0; }
+}
+
+.space-between-children-horizontal(@space) {
+  &>* { margin: 0 @space; }
+  &>:first-child { margin-left: 0; }
+  &>:last-child { margin-right: 0; }
+}
+
+.dali-grid:not(.dali-grid-editview) {
+
+  // Margin for rows
+  .space-between-children-vertical(@dali-grid-spacing-rows); // Rows
+
+  @media (max-width: (@screen-lg - 1px)) {
+    .space-between-children-vertical(@dali-grid-spacing-rows / 1.5);
+  }
+
+  // Margin for columns
+  .dali-grid-row {
+    .space-between-children-horizontal(@dali-grid-spacing-columns); // Columns
+  }
+
+  // Margins for elements
+  .dali-grid-column {
+    .space-between-children-vertical(@dali-grid-spacing-elements); // Elements
+  }
+
+
+  .dali-grid-row {
+    @media (max-width: @dali-responsive-break-four) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .dali-grid-column {
+
+    // One Column
+    @media (max-width: (@dali-responsive-break-all - 1px)) {
+      margin-left: 0;
+      margin-right: 0;
+      flex-basis: 100%;
+
+      &:not(:first-child) {
+        margin-top: @dali-grid-spacing-columns;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: @dali-grid-spacing-columns;
+      }
+    }
+
+    // Three columns
+    @media (min-width: @dali-responsive-break-all) and (max-width: (@dali-responsive-break-three - 1px)) {
+      &:nth-last-child(3):first-child,
+      &:nth-last-child(3):first-child ~ .dali-grid-column {
+        margin-left: 0;
+        margin-right: 0;
+        flex-basis: 100%;
+
+        &:not(:first-child) {
+          margin-top: @dali-grid-spacing-columns;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: @dali-grid-spacing-columns;
+        }
+      }
+    }
+
+    // 4 columns
+    @media (min-width: @dali-responsive-break-all) and (max-width: (@dali-responsive-break-four - 1px)) {
+      &:nth-last-child(4):first-child {
+        flex-basis: 34%;
+        margin-bottom: @dali-grid-spacing-columns;
+      }
+
+      &:nth-last-child(4):first-child ~ .dali-grid-column:nth-child(2) {
+        flex-basis: 34%;
+        margin-bottom: @dali-grid-spacing-columns;
+        margin-right: 0;
+      }
+
+      &:nth-last-child(4):first-child ~ .dali-grid-column:nth-child(3) {
+        flex-basis: 34%;
+        margin-top: @dali-grid-spacing-columns;
+        margin-left: 0;
+      }
+
+      &:nth-last-child(4):first-child ~ .dali-grid-column:nth-child(4) {
+        flex-basis: 34%;
+        margin-top: @dali-grid-spacing-columns;
+      }
+    }
+  }
+}
+
