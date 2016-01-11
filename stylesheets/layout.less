@@ -99,18 +99,20 @@
     }
 
     &-badge {
+      display: inline-block;
+      padding: 0 8px;
+      margin-top: 5px;
+      margin-left: 10px;
+      min-width: 26px;
+      height: 26px;
       background-color: @minicart-badge-background-color;
       border-radius: 20px;
       color: @minicart-badge-text-color;
-      display: inline-block;
-      font-size: 12px;
+      font-size: 15px;
       text-align: center;
       vertical-align: top;
-      white-space: nowrap;
-      margin-top: 6px;
-      margin-left: 10px;
-      padding: 5px 10px;
-      line-height: 1.4;
+      line-height: 1.9;
+      font-family: serif;
 
       &:empty:after{
         content:"0";
@@ -275,14 +277,14 @@
   font-size: 1.5em;
   position: absolute;
   right: 0;
-  top: -6em;
+  top: -5em;
 
   @media (min-width: @screen-sm-max) {
     display: none;
   }
 
   @media (max-width: 567px) {
-    top: -9em;
+    top: -8em;
   }
 
   label {
@@ -361,7 +363,6 @@
   height: 100px;
   justify-content: center;
   align-items: center;
-  clear: both;
 
   &-list {
     .list-unstyled;
