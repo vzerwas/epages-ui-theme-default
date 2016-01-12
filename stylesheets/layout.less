@@ -185,8 +185,9 @@
 // Main Navigation styling
 .navigation {
   position: relative;
-  border-top: 3px solid @navigation-border;
   padding-top: 3px;
+  margin-bottom: @base-margin * 2;
+  border-top: 3px solid @navigation-border;
 
   ul {
     .list-unstyled;
@@ -351,15 +352,14 @@
 }
 
 
-.main {
-  margin: 40px 0;
-}
-
+//
+// Footer
 .footer {
   display: flex;
   flex-flow: row;
   background-color: @footer-background-color;
-  padding: 20px;
+  padding: @base-padding * 2;
+  margin-top: @base-margin * 4;
   height: 100px;
   justify-content: center;
   align-items: center;
@@ -372,8 +372,8 @@
 
       &::after {
         content: '/';
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: @base-margin;
+        margin-right: @base-margin;
       }
 
       &-link {

@@ -8,21 +8,21 @@
 
     <section class="home-offer">
       <article class="home-offer-column">
-        <header>
+        <header class="home-offer-column-header">
           {@plugin type="epages.text" id="article-text-1"/}
         </header>
         {@plugin type="epages.image" id="article-image-1"/}
       </article>
 
       <article class="home-offer-column">
-        <header>
+        <header class="home-offer-column-header">
           {@plugin type="epages.text" id="article-text-2"/}
         </header>
         {@plugin type="epages.image" id="article-image-2"/}
       </article>
 
       <article class="home-offer-column">
-        <header>
+        <header class="home-offer-column-header">
           {@plugin type="epages.text" id="article-text-3"/}
         </header>
         {@plugin type="epages.image" id="article-image-3"/}
