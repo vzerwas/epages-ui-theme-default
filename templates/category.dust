@@ -67,11 +67,22 @@
             </div>
             <h2 class="product-title">{title}</h2>
           </a>
-          <h3 class="product-price">{price}</h3>
+
+          <div class="product-price">
+            {?manufacturerPrice}
+            <h3 class="product-price-old">{manufacturerPrice}</h3>
+            {/manufacturerPrice}
+            <h3 class="product-price-new">{price}</h3>
+          </div>
           <div class="product-availability">
             <span class="product-availability-icon {stockLevelClass}-stock-icon"></span>
-            <p class="product-availability-info">{availabilityText}</p>
+            <span class="product-availability-info">{availabilityText|s}</span>
           </div>
+
+          <button class="product-add-cart-button" type="submit"{^available} disabled="disabled"{/available}>
+            <span class="product-add-cart-button-icon"></span>Add to basket
+          </button>
+
         </li>
       {/products}
       </ul>

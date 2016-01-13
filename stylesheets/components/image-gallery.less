@@ -1,0 +1,167 @@
+//
+// Mixin
+.bounding-box-with-aspect-ratio(@ratio) {
+  height: 0;
+  padding-top: 1 / @ratio * 100%;
+  position: relative;
+
+  > * {
+    position: absolute;
+    top: 0;
+  }
+}
+
+
+// ---------- Styling ---------- //
+
+//
+// Image gallery
+.product-image-gallery {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+
+  @media (min-width: @screen-xs) and (max-width: @screen-md) {
+    padding-top: 90%;
+  }
+
+  // Desktop version for image
+  &-stage {
+    .bounding-box-with-aspect-ratio(1 / 1);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition-property: visibility, left;
+    transition-duration: .6s;
+
+    picture, img {
+      left: 0;
+      object-fit: scale-down;
+
+      @media (max-width: @screen-md) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // Thumbnails / Labels
+  label[for*=product-image-slide-switch-] {
+
+    // Desktop version for thumbnails
+    @media (min-width: @screen-md) {
+      position: relative;
+      left: -9px;
+      margin: (@base-margin * 2) (@base-margin / 2);
+      cursor: pointer;
+      width: 5em;
+      height: 5em;
+      outline: 1px solid @input-border-color;
+
+      picture, img {
+        display: inherit;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    //
+    // Mobile version for thumbnails until 991px
+    @media (max-width: @screen-sm-max) {
+      margin: (@base-margin / 2) 7px @base-margin;
+
+      // hide labels
+      picture {
+        display: none;
+      }
+
+      // thumbnail dots
+      &::before {
+        .fa;
+        .fa-lg;
+        content: @fa-var-circle;
+        color: lighten(@brand-secondary, 60%);
+      }
+    }
+
+    // swipe arrows
+    &::after {
+      @media (min-width: @screen-md)  {
+        display: none;
+      }
+
+      .fa;
+      .fa-2x;
+      content: @fa-var-caret-left;
+      color: @brand-primary;
+      position: absolute;
+      top: 0;
+      width: .7em;
+      height: calc(~'100% - 1em');
+      padding: 50% 0;
+      text-align: center;
+      left: 0;
+      z-index: 1;
+    }
+
+    &:first-of-type {
+      &::after {
+        content: "\f0d9\00a0\f0da"; // arrow left, non-breaking space, arrow-right
+        text-align: justify;
+        text-align-last: justify;
+        padding-left: .15em;
+        width: calc(~'100% - .3em');
+      }
+    }
+  }
+
+  // show / hide logic
+  input[name='product-image-slide-switch'] {
+    display: none;
+
+    // the thumbnails / dots
+    &:checked + label[for*=product-image-slide-switch] {
+
+      @media (min-width: @screen-md) {
+        outline: 1px solid @brand-primary;
+      }
+
+      @media (max-width: @screen-sm-max) {
+        &::before {
+          .fa;
+          .fa-lg;
+          content: @fa-var-circle;
+          color: @brand-primary;
+        }
+      }
+    }
+
+    ~ .product-image-gallery-stage {
+      left: -100%;
+      visibility: hidden;
+      transition-delay: .3s, 0s;
+    }
+
+    &:checked + label[for*=product-image-slide-switch]::after {
+      content: '';
+      pointer-events: none;
+    }
+
+    &:checked + label[for*=product-image-slide-switch] + .product-image-gallery-stage {
+      left: 0;
+      visibility: visible;
+      transition-delay: 0s, 0s;
+
+      ~ .product-image-gallery-stage {
+        left: 100%;
+      }
+
+      + input + label[for*=product-image-slide-switch]::after {
+        content: @fa-var-caret-right;
+        left: inherit;
+        right: 0;
+      }
+    }
+  }
+}
