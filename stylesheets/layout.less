@@ -99,18 +99,20 @@
     }
 
     &-badge {
+      display: inline-block;
+      padding: 0 8px;
+      margin-top: 5px;
+      margin-left: 10px;
+      min-width: 26px;
+      height: 26px;
       background-color: @minicart-badge-background-color;
       border-radius: 20px;
       color: @minicart-badge-text-color;
-      display: inline-block;
-      font-size: 12px;
+      font-size: 15px;
       text-align: center;
       vertical-align: top;
-      white-space: nowrap;
-      margin-top: 6px;
-      margin-left: 10px;
-      padding: 5px 10px;
-      line-height: 1.4;
+      line-height: 1.9;
+      font-family: serif;
 
       &:empty:after{
         content:"0";
@@ -183,8 +185,9 @@
 // Main Navigation styling
 .navigation {
   position: relative;
-  border-top: 3px solid @navigation-border;
   padding-top: 3px;
+  margin-bottom: @base-margin * 2;
+  border-top: 3px solid @navigation-border;
 
   ul {
     .list-unstyled;
@@ -275,14 +278,14 @@
   font-size: 1.5em;
   position: absolute;
   right: 0;
-  top: -6em;
+  top: -5em;
 
   @media (min-width: @screen-sm-max) {
     display: none;
   }
 
   @media (max-width: 567px) {
-    top: -9em;
+    top: -8em;
   }
 
   label {
@@ -348,31 +351,44 @@
   border: 0;
 }
 
-
-.main {
-  margin: 40px 0;
-}
-
+//
+// Footer
 .footer {
   display: flex;
   flex-flow: row;
-  background-color: @footer-background-color;
-  padding: 20px;
-  height: 100px;
-  justify-content: center;
   align-items: center;
   clear: both;
+  justify-content: flex-start;
+  margin-top: (@base-margin * 4);
+  padding: @base-padding 15px;
+  background-color: @footer-background-color;
+
+  // tablet view
+  @media (min-width: @screen-sm) {
+    height: 100px;
+    justify-content: center;
+    padding: (@base-padding * 2);
+  }
 
   &-list {
     .list-unstyled;
 
     &-item {
-      display: inline;
+      display: block;
+      margin-bottom: (@base-margin / 2);
 
-      &::after {
-        content: '/';
-        margin-left: 20px;
-        margin-right: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (min-width: @screen-sm) {
+        display: inline-block;
+
+        // Link seperator
+        &::after {
+          content: '/';
+          margin: 0 @base-margin;
+        }
       }
 
       &-link {

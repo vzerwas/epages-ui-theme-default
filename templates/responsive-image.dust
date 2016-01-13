@@ -1,0 +1,6 @@
+<picture>
+  <source media="(min-width: 769px and max-width: 991px)" srcset="{src}&width=800&height=800">
+  <source media="(min-width: 768px)" srcset="{src}&width=500&height=500">
+  <source srcset="{src}&width=300&height=300">
+  <img class="{classname}" src="{src}&width=1000&height=1000" alt="{alt}">
+</picture>

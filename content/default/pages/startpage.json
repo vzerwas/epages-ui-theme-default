@@ -17,7 +17,7 @@
       "id": "article-text-1",
       "type": "epages.text",
       "data": {
-        "content": "<p>New products</p><h3>Warm gloves</h3>"
+        "content": "<h3><a href=\"#\">Warm gloves</a></h3>"
       }
     },
     {
@@ -34,7 +34,7 @@
       "id": "article-text-2",
       "type": "epages.text",
       "data": {
-        "content": "<p>New fashion</p><h3>For man</h3>"
+        "content": "<h3><a href=\"#\">For man</a></h3>"
       }
     },
     {
@@ -51,7 +51,7 @@
       "id": "article-text-3",
       "type": "epages.text",
       "data": {
-        "content": "<p>Special offers</p><h3>Colourful scarves</h3>"
+        "content": "<h3><a href=\"#\">Colourful scarves</a></h3>"
       }
     },
     {

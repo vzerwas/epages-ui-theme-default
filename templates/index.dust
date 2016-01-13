@@ -8,21 +8,21 @@
 
     <section class="home-offer">
       <article class="home-offer-column">
-        <header>
+        <header class="home-offer-column-header">
           {@plugin type="epages.text" id="article-text-1"/}
         </header>
         {@plugin type="epages.image" id="article-image-1"/}
       </article>
 
       <article class="home-offer-column">
-        <header>
+        <header class="home-offer-column-header">
           {@plugin type="epages.text" id="article-text-2"/}
         </header>
         {@plugin type="epages.image" id="article-image-2"/}
       </article>
 
       <article class="home-offer-column">
-        <header>
+        <header class="home-offer-column-header">
           {@plugin type="epages.text" id="article-text-3"/}
         </header>
         {@plugin type="epages.image" id="article-image-3"/}
@@ -38,8 +38,22 @@
               <img class="product-image" src="{image.url}" alt="{title}" />
             </div>
             <h2 class="product-title">{title}</h2>
-            <h3 class="product-price">{price}</h3>
           </a>
+
+          <div class="product-price">
+            {?manufacturerPrice}
+            <h3 class="product-price-old">{manufacturerPrice}</h3>
+            {/manufacturerPrice}
+            <h3 class="product-price-new">{price}</h3>
+          </div>
+
+          <div class="product-availability">
+            <span class="product-availability-icon {stockLevelClass}-stock-icon"></span>
+            <span class="product-availability-info">{availabilityText|s}</span>
+          </div>
+          <button class="product-add-cart-button" type="submit"{^available} disabled="disabled"{/available}>
+            <span class="product-add-cart-button-icon"></span>Add to basket
+          </button>
         </li>
       {/products}
       </ul>

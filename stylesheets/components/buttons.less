@@ -1,8 +1,7 @@
 .button {
-  padding: 10px 30px;
+  padding: 15px (@base-padding * 3) @base-padding;
   font-size: @font-size;
   border: 0;
-  border-radius: @button-border-radius;
   outline: none;
 
   &:focus {
@@ -11,7 +10,7 @@
   }
 
   &:disabled {
-    opacity: 0.5;
+    background-color: @button-background-color-disabled;
     cursor: not-allowed;
   }
 }
@@ -20,12 +19,12 @@
 .button-default {
   background-color: @button-background-color-default;
   color: white;
-  .button-hover-color(darken(@button-background-color-default, 20%), @button-text-color-default); // Hover
+  .button-hover-color(darken(@button-background-color-default, 20%), @button-text-color-default);  // Hover
 }
 
 // Primary
 .button-primary {
   background-color: @button-background-color-primary;
   color: @button-text-color-primary;
-  .button-hover-color(darken(@button-background-color-primary, 10%), @button-text-color-primary); // Hover
+  .button-hover-color(@global-link-hover-color, @button-text-color-primary);  // Hover
 }

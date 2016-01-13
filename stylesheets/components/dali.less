@@ -1,77 +1,95 @@
 //
-// Typography
+// Colors
+@dali-text-link-color: lighten(@global-link-hover-color, 10%);
+@dali-blockquote-text-color: lighten(@brand-secondary, 40%);
 
-.dali-plugin-text-content h1 {
-  font-size: @font-size-h1;
-}
-
-.dali-plugin-text-content h2 {
- font-size: @font-size-h2;
-}
-
-.dali-plugin-text-content h3 {
-  font-size: @font-size-h3;
-}
-
-.dali-plugin-text-content p {
-  margin-bottom: 20px;
-}
-
-.dali-plugin-text-content ul {
-
-}
-
-.dali-plugin-text-content blockquote {
-
-}
 
 //
-// Dali: responsive behavior
-//
-// :not(.dali-grid-editview) is necessary to a avoid
-// the responsive behavior in editor mode
+// Styling of typography in editor and storefront
 
-// General grid
-.dali-grid:not(.dali-grid-editview) > * {
-  margin: 0;
-}
+.dali-plugin-text-content, // storefront
+.dali-plugin-text-content-editable { // editor (dali)
 
-// Row
-.dali-grid:not(.dali-grid-editview) .dali-grid-row {
-  flex-wrap: wrap;
-  margin: 0 0 @base-margin;
-}
-
-// Column
-.dali-grid:not(.dali-grid-editview) .dali-grid-column {
-  margin: 0 (@base-margin * 2) 0 0;
-
-  &:last-child {
-    margin-right: 0;
+  h1 {
+    font-size: @font-size-h1;
+    margin-top: @base-margin * 2.6;
+    margin-bottom: @base-margin / 2;
   }
 
-  @media (max-width: @screen-md) {
-    flex-basis: 40%;
+  h2 {
+    font-size: @font-size-h2;
+    margin-top: @base-margin * 2.5;
+    margin-bottom: @base-margin / 2;
+  }
 
-    &:nth-child(2) {
-      margin-right: 0;
+  h3 {
+    font-size: @font-size-h3;
+    margin-top: @base-margin * 1.8;
+    margin-bottom: @base-margin / 4;
+  }
+
+  p {
+   margin-bottom: @base-margin / 2;
+  }
+
+  ul, ol {
+    margin: (@base-margin * 1.5) @base-margin;
+
+    @media (max-width: @screen-xs) {
+      margin-left: 0;
+    }
+
+    li {
+      margin-bottom: @base-margin / 2;
+      line-height: @line-height;
     }
   }
 
-  @media (max-width: @screen-sm) {
-    flex-basis: 100%;
-    margin: 0 0 @base-margin 0;
+  blockquote {
+    margin: (@base-margin * 2) (@base-margin * 3);
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    color: @dali-blockquote-text-color;
 
-    &:last-child {
-      margin-bottom: 0;
+    @media (max-width: @screen-xs) {
+      margin-right: @base-margin;
+      margin-left: @base-margin;
+    }
+  }
+
+  p, blockquote, ul, ol {
+    a {
+      color: @dali-text-link-color;
+
+      &:hover {
+        color: @global-link-hover-color;
+      }
+    }
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+    & > *:first-child {
+      margin-top: 0;
+    }
+  }
+
+  & > *:last-child {
+    margin-bottom: -0.3em; // to reduce the font height of the last text element
+    & > *:last-child {
+      margin-bottom: -0.3em;
     }
   }
 }
 
-.dali-grid:not(.dali-grid-editview) .dali-grid-column > * {
-  margin: 0 0 @base-margin 0;
-}
+a .dali-plugin-image-content {
+  opacity: 1;
+  transition: all 0.25s ease 0s;
+  background-color: @brand-white;
 
-.dali-grid:not(.dali-grid-editview) .dali-grid-column > :last-child {
-  margin-bottom: @base-margin;
+  &:hover {
+    opacity: 0.9;
+    filter: sepia(0.2);
+  }
 }
