@@ -12,24 +12,24 @@
 
   h1 {
     font-size: @font-size-h1;
-    margin-top: @base-margin * 2.6;
-    margin-bottom: @base-margin / 2;
+    margin-top: (@base-margin * 2.6);
+    margin-bottom: (@base-margin / 2);
   }
 
   h2 {
     font-size: @font-size-h2;
-    margin-top: @base-margin * 2.5;
-    margin-bottom: @base-margin / 2;
+    margin-top: (@base-margin * 2.5);
+    margin-bottom: (@base-margin / 2);
   }
 
   h3 {
     font-size: @font-size-h3;
-    margin-top: @base-margin * 1.8;
-    margin-bottom: @base-margin / 4;
+    margin-top: (@base-margin * 1.8);
+    margin-bottom: (@base-margin / 4);
   }
 
   p {
-   margin-bottom: @base-margin / 2;
+   margin-bottom: (@base-margin / 2);
   }
 
   ul, ol {
@@ -40,7 +40,7 @@
     }
 
     li {
-      margin-bottom: @base-margin / 2;
+      margin-bottom: (@base-margin / 2);
       line-height: @line-height;
     }
   }
@@ -49,7 +49,7 @@
     margin: (@base-margin * 2) (@base-margin * 3);
     font-style: italic;
     font-weight: 100;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.2px;
     color: @dali-blockquote-text-color;
 
     @media (max-width: @screen-xs) {
@@ -76,9 +76,9 @@
   }
 
   & > *:last-child {
-    margin-bottom: -0.3em; // to reduce the font height of the last text element
+    margin-bottom: -6px; // to reduce the font height of the last text element
     & > *:last-child {
-      margin-bottom: -0.3em;
+      margin-bottom: -6px;
     }
   }
 }

@@ -17,7 +17,7 @@
 //
 // Product detail page
 .product {
-  margin-top: 40px;
+  margin-top: (@base-margin * 2);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -36,7 +36,7 @@
     }
 
     @media (min-width: @screen-md) {
-      padding: 0 3em 0 0;
+      padding: 0 (@base-padding * 5) 0 0;
       text-align: center;
     }
 
@@ -57,7 +57,7 @@
     flex-grow: 1;
 
     @media (min-width: @screen-md) {
-      padding: 0 0 0 3em;
+      padding: 0 0 0 (@base-padding * 5);
     }
 
     &-title {
@@ -69,12 +69,12 @@
         display: inline-block;
       }
 
-      margin: 0 0 0.2em;
+      margin: 0 0 7px;
       font-weight: 100;
     }
 
     &-box {
-      margin-bottom: 2.5em;
+      margin-bottom: (@base-margin * 2);
 
       @media (max-width: @screen-sm) {
         border-bottom: 1px dashed @dashed-border-color;
@@ -85,7 +85,7 @@
         color: @price-vate-note;
 
         @media (max-width: @screen-sm) {
-          margin: 0.6em 0;
+          margin: (@base-margin / 2) 0;
         }
       }
 
@@ -113,7 +113,7 @@
         padding: 2px @base-padding 2px (@base-padding / 2);
         background-color: rgb(20, 102, 28);
         color: @brand-white;
-        font-size: 0.7em;
+        font-size: 12px;
         font-weight: 100;
         vertical-align: middle;
 
@@ -141,7 +141,7 @@
     }
 
     &-quantity-label {
-      margin: 0 0 1em;
+      margin: 0 0 17px;
       font-weight: 500;
 
       &-input-field {
@@ -154,8 +154,8 @@
 
   // product detail page
   &-details-availability {
-    margin-bottom: 3em;
-    line-height: 1.4em;
+    margin-bottom: 50px;
+    line-height: 24px;
 
     &-icon {
       .stock-level;
@@ -179,7 +179,7 @@
     .button;
     .button-primary;
     display: block;
-    margin: 0 0 5em;
+    margin: 0 0 85px;
 
     &-icon {
       .fa;

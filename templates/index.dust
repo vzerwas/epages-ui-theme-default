@@ -32,7 +32,7 @@
     <section class="home-feature-products">
       <ul class="category-product-list column-grid-2 column-grid-3 column-grid-4">
       {#products}
-        <li>
+        <li class="category-product-list-items">
           <a href="{href}">
             <div class="center-image-container">
               <img class="product-image" src="{image.url}" alt="{title}" />
@@ -51,9 +51,6 @@
             <span class="product-availability-icon {stockLevelClass}-stock-icon"></span>
             <span class="product-availability-info">{availabilityText|s}</span>
           </div>
-          <button class="product-add-cart-button" type="submit"{^available} disabled="disabled"{/available}>
-            <span class="product-add-cart-button-icon"></span>Add to basket
-          </button>
         </li>
       {/products}
       </ul>

@@ -21,8 +21,8 @@
 // Shopping cart empty page
 .cart-empty-note {
   width: 70%;
-  padding: @base-padding * 3;
-  margin: 80px auto;
+  padding: (@base-padding * 3);
+  margin: (@base-margin * 4) auto;
   background-color: @cart-background-color;
   text-align: center;
 
@@ -87,19 +87,19 @@
       font-weight: 400;
 
       &:nth-child(2) {
-        padding-right: @base-padding * 4;
+        padding-right: (@base-padding * 4);
       }
 
       @media (max-width: @screen-sm) {
         padding-left: 0;
-        &:nth-child(1) {padding-right: @base-padding * 1.5;}
+        &:nth-child(1) {padding-right: (@base-padding * 1.5);}
       }
 
       @media (max-width: @screen-min) {
         padding-top: 0;
-        &:nth-child(2) {padding-bottom: @base-padding * 2;}
-        &:nth-child(4) {padding-bottom: @base-padding * 2.5;}
-        &:nth-child(5) {padding-bottom: @base-padding / 2;}
+        &:nth-child(2) {padding-bottom: (@base-padding * 2);}
+        &:nth-child(4) {padding-bottom: (@base-padding * 2.5);}
+        &:nth-child(5) {padding-bottom: (@base-padding / 2);}
       }
     }
   }
@@ -129,7 +129,7 @@
     &-image {
       padding: @base-padding;
       @media (max-width: @screen-min) {
-        padding: @base-padding / 2;
+        padding: (@base-padding / 2);
       }
     }
   }
@@ -231,6 +231,7 @@
 
   &-item-total {
     text-align: right;
+
     @media (max-width: @screen-sm) {
       float: left;
       width: 33.3333%;
@@ -303,7 +304,7 @@
 .cart-totals {
   display: inline-block;
   padding-right: 60px;
-  margin-bottom: 2em;
+  margin-bottom: 34px;
   width: 100%;
   @media (max-width: @screen-sm) {
     padding-right: 0;
@@ -353,7 +354,7 @@
     .button-primary;
     display: inline-block;
     float: right;
-    margin-top: @base-margin * 2;
+    margin-top: (@base-margin * 2);
     clear: both;
   }
 }

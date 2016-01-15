@@ -31,10 +31,6 @@
   min-width: @min-width;
 }
 
-.hero-image {
-  margin-bottom: 2em;
-}
-
 //
 // Header styling with logo, search field and mini cart
 .header {
@@ -65,7 +61,7 @@
 
     @media (max-width: 567px) {
       order: 3;
-      margin-top: @base-margin * 2;
+      margin-top: (@base-margin * 2);
     }
   }
 
@@ -125,7 +121,7 @@
 // Mini cart box which is visible on hover
 .minicart-container {
   display: none;
-  padding: @base-padding * 2;
+  padding: (@base-padding * 2);
   margin: @base-margin 0;
   position: absolute;
   float: right;
@@ -162,7 +158,7 @@
     &-product {
       display: table-cell;
       width: 86%;
-      padding-left: @base-padding / 2;
+      padding-left: (@base-padding / 2);
       vertical-align: top;
 
       &-name {
@@ -186,7 +182,7 @@
 .navigation {
   position: relative;
   padding-top: 3px;
-  margin-bottom: @base-margin * 2;
+  margin-bottom: (@base-margin * 2);
   border-top: 3px solid @navigation-border;
 
   ul {

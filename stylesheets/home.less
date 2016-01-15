@@ -7,7 +7,7 @@
 
   // Header content
   &-header {
-    margin-bottom: @base-margin * 3;
+    margin-bottom: (@base-margin * 3);
   }
 
   // Offer content
@@ -16,13 +16,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: @base-margin * 2;
+    margin-bottom: (@base-margin * 2);
 
     &-column {
       display: flex;
       flex-direction: column;
       flex-basis: 31%;
-      margin-bottom: 40px;
+      margin-bottom: (@base-margin * 2);
 
       @media (max-width: @screen-md) {
         display: block;
@@ -57,7 +57,7 @@
       flex-basis: 100%;
 
       &-header {
-        margin-top: @base-margin * 3;
+        margin-top: (@base-margin * 3);
         margin-bottom: @base-margin;
       }
     }
