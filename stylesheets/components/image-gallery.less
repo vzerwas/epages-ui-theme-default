@@ -17,8 +17,14 @@
 //
 // Image gallery
 .product-image-gallery {
+
+  &-wrapper {
+    flex-basis: 50%;
+    flex-grow: 1;
+  }
+
   position: relative;
-  padding-top: 100%;
+  //padding-top: 100%;
   overflow: hidden;
 
   @media (min-width: @screen-xs) and (max-width: @screen-md) {
@@ -29,14 +35,13 @@
   &-stage {
     .bounding-box-with-aspect-ratio(1 / 1);
     width: 100%;
-    position: absolute;
     top: 0;
     transition-property: visibility, left;
     transition-duration: .6s;
 
     picture, img {
       left: 0;
-      object-fit: scale-down;
+      object-fit: contain;//scale-down;
 
       @media (max-width: @screen-md) {
         width: 100%;

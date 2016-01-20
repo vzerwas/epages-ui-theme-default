@@ -2,8 +2,9 @@
 
 {<content}
 <section class="product">
-  <div class="product-image">
-    {#product.slideshow}
+
+  {#product.slideshow}
+    <div class="product-image-gallery-wrapper">
       <div class="product-image-gallery">
         {#images}
           <input type="radio" name="product-image-slide-switch" id="product-image-slide-switch-{$idx}"
@@ -17,10 +18,13 @@
         {/images}
         <label for="product-image-gallery-lb-toggle"></label>
       </div>
-      {:error}{!:error, not {:else} since this is a promise!}
+    </div>
+  {:error}{!:error, not {:else} since this is a promise!}
+    <div class="product-image">
       {>"responsive-image" src="{product.image.url}" alt="{product.title}" /}
-    {/product.slideshow}
-  </div>
+    </div>
+  {/product.slideshow}
+
 
   <div class="product-info">
     <h1 class="product-info-title">{product.title}</h1>
