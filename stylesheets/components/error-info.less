@@ -1,0 +1,17 @@
+//
+// Mixin for info messages
+
+.error-page-info {
+  margin: (@base-margin * 3) auto;
+  padding: (@base-padding * 3);
+  background-color: @info-hint-background-color;
+  text-align: center;
+
+  h3 {line-height: @line-height;}
+
+  p {padding: @base-padding;}
+
+  @media (max-width: @screen-xs) {
+    margin: (@base-margin * 2) auto;
+  }
+}

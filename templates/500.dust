@@ -1,9 +1,11 @@
 {>"layout"/}
 
 {<content}
-  <section class="error-500">
-    <h3>500 error</h3>
-    <p>Sorry, something went wrong.</p>
-    <p><a href="{baseUrl}">Click here to return to the start page.</a></p>
+  <section class="error-page">
+    <h1>500 Internal server error</h1>
+    <div class="error-page-info">
+      <h3>Sorry, something went wrong.</h3>
+      <p><a href="{baseUrl}"><b>Click here</b></a> to return to the start page.</p>
+    </div>
   </section>
 {/content}

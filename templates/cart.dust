@@ -7,7 +7,7 @@
       <h1>Shopping bag is empty</h1>
       <div class="cart-empty-note">
         <h3>You have no items in your shopping bag</h3>
-        <p class="cart-empty-note-text"><a href="{baseUrl}">Click here</a> to continue shopping.</p>
+        <p><a href="{baseUrl}"><b>Click here</b></a> to continue shopping.</p>
       </div>
     {:else}
       <h1>Your shopping bag selections</h1>

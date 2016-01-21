@@ -37,9 +37,9 @@
             </span>
             <ul>
               {#products.sorts}
-                <li {?active}class="active"{/active}>
-                    <a href="?page={products.pages.active}&sort={value}"><span>{label}</span></a>
-                </li>
+              <li {?active}class="active"{/active}>
+                <a href="?page={products.pages.active}&sort={value}"><span>{label}</span></a>
+              </li>
               {/products.sorts}
             </ul>
           </li>
@@ -47,20 +47,19 @@
       </div>
 
       {#products.pages}
-      {?list[1]}
-      <div class="pagination">
+        {?list[1]}
+        <div class="pagination">
           {?previous.enabled}<a href="{previous.query}"><span class="pagination-icon-previous"></span></a>{/previous.enabled}
           {#list}
             <a href="{query}" {?active}class="pagination-current"{/active}>{number}</a>
           {/list}
           {?next.enabled}<a href="{next.query}"><span class="pagination-icon-next"></span></a>{/next.enabled}
-      </div>
-      {/list[1]}
+        </div>
+        {/list[1]}
       {/products.pages}
     </div>
     {/products}
 
-    <section class="category-product">
     {?products}
       <ul class="category-product-list column-grid-2 column-grid-3 column-grid-4">
       {#products}
@@ -75,46 +74,45 @@
         </li>
       {/products}
       </ul>
-    {:else}
-      <div class="search-no-result">
-        <div class="search-no-result-form">
-          <h2 class="search-no-result-form-headline">Your search did not produce any matches.</h2>
-          <form class="search-form" method="get" action="{baseUrl}/search" autocomplete="off">
-            <label class="search-form-label" for="search-label">
-              <i class="fa fa-search"></i>
-            </label>
-            <input class="search-form-field" type="text" name="query" value="{products.queryString}" placeholder="Search for" />
-            <input type="hidden" name="page" value="1"/>
-            <input type="hidden" name="sort" value="{products.activeSort}"/>
-            <div id="suggested-result" class="search-form-suggestions"></div>
-          </form>
-        </div>
-        <div class="search-no-result-hint">
-          <h3>These tips may help:</h3>
-          <ul>
-            <li>Check your search terms for spelling errors.</li>
-            <li>Describe what you are looking for using different words.</li>
-            <li>Try to use more general search terms.</li>
-          </ul>
-          <p>If you still cannot find what you are looking for, do not hesitate to contact us.</p>
-        </div>
-      </div>
-      {/products}
-    </section>
-
-    <div class="toolbar-bottom">
+      <div class="toolbar-bottom">
       {#products.pages}
       {?list[1]}
       <div class="pagination">
-          {?previous.enabled}<a href="{previous.query}"><span class="pagination-icon-previous"></span></a>{/previous.enabled}
-          {#list}
-            <a href="{query}" {?active}class="pagination-current"{/active}>{number}</a>
-          {/list}
-          {?next.enabled}<a href="{next.query}"><span class="pagination-icon-next"></span></a>{/next.enabled}
+      {?previous.enabled}<a href="{previous.query}"><span class="pagination-icon-previous"></span></a>{/previous.enabled}
+        {#list}
+          <a href="{query}" {?active}class="pagination-current"{/active}>{number}</a>
+        {/list}
+        {?next.enabled}<a href="{next.query}"><span class="pagination-icon-next"></span></a>{/next.enabled}
       </div>
       {/list[1]}
       {/products.pages}
     </div>
+
+    {:else}
+    <div class="search-no-result">
+      <div class="search-no-result-form">
+        <h2 class="search-no-result-form-headline">Your search did not produce any matches.</h2>
+        <form class="search-form" method="get" action="{baseUrl}/search" autocomplete="off">
+          <label class="search-form-label" for="search-label">
+            <i class="fa fa-search"></i>
+          </label>
+          <input class="search-form-field" type="text" name="query" value="{products.queryString}" placeholder="Search for" />
+          <input type="hidden" name="page" value="1"/>
+          <input type="hidden" name="sort" value="{products.activeSort}"/>
+          <div id="suggested-result" class="search-form-suggestions"></div>
+        </form>
+      </div>
+      <div class="search-no-result-hint">
+        <h3>These tips may help:</h3>
+        <ul>
+          <li>Check your search terms for spelling errors.</li>
+          <li>Describe what you are looking for using different words.</li>
+          <li>Try to use more general search terms.</li>
+        </ul>
+        <p>If you still cannot find what you are looking for, do not hesitate to contact us.</p>
+      </div>
+    </div>
+    {/products}
   </section>
 
 {/content}
